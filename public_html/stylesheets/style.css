@@ -52,7 +52,7 @@ img {
   #regNavbar a:hover {
       color: rgb(41, 114, 182)
   }
-  
+
   .circle {
     clip-path: circle(44% at 50% 50%);
   }
@@ -102,6 +102,14 @@ img {
     background-color: black;
     opacity: 0.6;
     z-index: 1;
+  }
+/* Admin Table */
+  .table{
+    text-align: center;
+  }
+
+  .table th{
+    color: burlywood;
   }
   
   @media (pointer: coarse) and (hover: none) {
