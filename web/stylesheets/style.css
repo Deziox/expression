@@ -1,0 +1,148 @@
+/* .navbar {
+    background-color: darkcyan;
+} */
+
+/* Font Weights 200,400, 700 */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  body header{
+      font-family: "Oswald";
+      font-weight: 200 !important;
+  }
+  body h1{
+      font-family: "Oswald";
+      font-weight: 400;
+      
+  }
+  
+  body h2{
+    font-family: "Oswald";
+    font-weight: 200 !important;
+    font-size: 1.25rem !important;
+    color: rgb(152, 192, 214) !important;
+  }
+  
+  body h3{
+    font-family: "Oswald";
+    font-weight: 400;
+    color: rgb(27,65,86);
+    font-size: 2rem;
+  }
+  body #headline {
+    /* border-radius: 25px; */
+    background-image: url(pictures/swirl.png);
+    background-position: center;
+  }
+  body #points {
+    font-family: "Oswald";
+    font-weight: 200;
+    font-size: 1.1rem;
+  }
+  .mainNavbar a:hover {
+      color: rgb(41, 114, 182);
+  }
+  #regNavbar {
+      background-color: rgb(27,65,86);
+  }
+  #regNavbar a:hover {
+      color: rgb(41, 114, 182)
+  }
+  
+  .circle {
+    clip-path: circle(44% at 50% 50%);
+  }
+  
+  .dash {
+      width: 150px;
+      border-bottom:4px dashed rgb(67, 183, 255);
+      border-top: 4px dashed rgb(67, 183, 255);
+  
+  }
+  
+  header {
+    position: relative;
+    background-color: black;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  header .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 1;
+  }
+  
+  @media (pointer: coarse) and (hover: none) {
+    header {
+      background: url(pictures/galaxy.jpg) black no-repeat center center scroll;
+    }
+    header video {
+      display: none;
+    }
+  }
+  
+  /* NAV BAR FADE COLOUR */
+  .navbar.scrolled {
+      background: rgb(27,65,86);
+      transition: background 1000ms;
+      opacity: 0.9;
+      
+  }
+  
+  @media (max-width: 1200px) {
+      #headingGroup h1 {
+          font-size: 3rem;
+          font-weight: 200;
+      }
+  }
+  /* #myVideo {
+      position: fixed;
+      right: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+  } */
+  
+  
+  /* #container {
+      width: 100%;
+      height: 100vh;
+      scroll-behavior: smooth;
+  } */
+  
+  
+  /* #body {
+      background-color:black;
+  } */
