@@ -1,5 +1,5 @@
 <?php
-
+include('web/index.html');
 require('../vendor/autoload.php');
 echo "test"
 /*
