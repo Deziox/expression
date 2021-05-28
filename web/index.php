@@ -1,6 +1,6 @@
 <?php
-include('web/index.html');
 require('../vendor/autoload.php');
+include('index.html');
 echo "test"
 /*
 $app = new Silex\Application();
