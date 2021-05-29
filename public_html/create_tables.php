@@ -18,11 +18,11 @@ try{
     echo "Connected Successfully";
 
     $stmt = $db->prepare(
-        "CREATE TABLE 'users' (
+        "CREATE TABLE users (
                 userid int(11) AUTO_INCREMENT,
                 email varchar(30) NOT NULL DEFAULT '',
                 password char NOT NULL,
-                'is_admin' bit NOT NULL DEFAULT 0,
+                is_admin bit NOT NULL DEFAULT 0,
                 PRIMARY KEY (userid)
             )"
     );
