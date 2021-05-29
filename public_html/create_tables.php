@@ -26,7 +26,7 @@ try{
                 PRIMARY KEY (userid)
             )"
     );
-
+    $r = $stmt->execute();
 
 }catch(PDOException $e){
     echo "Connection failed: " . $e->getMessage();
