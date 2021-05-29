@@ -1,4 +1,5 @@
 <?php
+
 $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
 echo array_values($cleardb_url);
