@@ -17,7 +17,6 @@ require('../vendor/autoload.php');
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
-
 </head>
 
 
@@ -35,7 +34,6 @@ require('../vendor/autoload.php');
             <li class="nav-item">
                 <a href="register.php" class="nav-link">Register</a>
             </li>
-
         </ul>
     </div>
 </nav>

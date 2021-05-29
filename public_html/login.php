@@ -1,4 +1,8 @@
 <?php
+/**
+ * @var array $errors
+ */
+include('../login/login_handler.php');
 ?>
 
 <!doctype html>
@@ -36,21 +40,23 @@
         <div class="jumbotron pt-5">
             <div class="align-self-center mb-2">Enter Login:</div>
 
-            <form>
+            <form action="login.php" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="Email">E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        <?php echo "<div class=\"error\">".$errors['email']."</div>";?>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <?php echo "<div class=\"error\">".$errors['password']."</div>";?>
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 
         </div>
 
