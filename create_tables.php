@@ -21,7 +21,8 @@ try{
         "DROP TABLE IF EXISTS users;
             CREATE TABLE users (
                 userid int(11) AUTO_INCREMENT,
-                email varchar(30) NOT NULL DEFAULT '',
+                email char NOT NULL DEFAULT '',
+                username varchar(30) NOT NULL,
                 password char NOT NULL,
                 is_admin bit NOT NULL DEFAULT 0,
                 PRIMARY KEY (userid)
