@@ -43,7 +43,7 @@
             <form action="register.php" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="firstName">Username</label>
+                        <label for="Username">Username</label>
                         <?php echo "<div class=\"error\">".$errors['username']."</div>";?>
                         <input type="text" class="form-control" id="username" placeholder="John" name="username">
                     </div>
@@ -54,9 +54,13 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-6>
                         <label for="password">Password</label>
                         <?php echo "<div class=\"error\">".$errors['password']."</div>";?>
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="password">Confirm Password</label>
                         <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                     </div>
                 </div>
