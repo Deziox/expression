@@ -2,18 +2,22 @@
     require('../config.php');
 
     $errors = array('email'=>'','username'=>'','password'=>'');
+    $empty = false;
 
     if(isset($_POST['submit'])){
         if(empty($_POST['email'])){
             $errors['email'] = "An email is required";
+            $empty = true;
         }
         if(empty($_POST['username'])){
             $errors['username'] = "A username is required";
+            $empty = true;
         }
         if(empty($_POST['password'])){
             $errors['password'] = "Password cannot be empty";
+            $empty = true;
         }
-        if($errors['email'] != '' && $errors['username'] != '' && $errors['password'] != ''){
+        if(!$empty){
             $email = $_POST['email'];
             $username = $_POST['username'];
             $password = $_POST['password'];
