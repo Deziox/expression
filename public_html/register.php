@@ -2,7 +2,7 @@
 /**
  * @var array $errors
  */
-    include('../login/register_handler.php');
+include('../login/register_handler.php');
 ?>
 
 <!doctype html>
@@ -82,5 +82,3 @@
 
 </body>
 </html>
-
-
