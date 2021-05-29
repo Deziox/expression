@@ -1,4 +1,5 @@
 <?php
+    include('../login/register_handler.php');
 ?>
 
 <!doctype html>
@@ -36,7 +37,7 @@
         <div class="jumbotron pt-5">
             <div class="align-self-center mb-2">Enter your information:</div>
 
-            <form>
+            <form action="register.php" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="firstName">Username</label>
