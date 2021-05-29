@@ -11,13 +11,22 @@ session_start();
 require('../config.php');
 
 // Connect to DB
-echo "test";
-
 //$conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
 try{
-    $conn = new PDO("mysql:host=$cleardb_server;dbname=$cleardb_db",$cleardb_username,$cleardb_password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    $db = new PDO("mysql:host=$cleardb_server;dbname=$cleardb_db",$cleardb_username,$cleardb_password);
+    $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     echo "Connected Successfully";
+
+    $stmt = $db->prepare(
+        "CREATE TABLE 'users' (
+                userid int(11) AUTO_INCREMENT,
+                email varchar(30) NOT NULL DEFAULT '',
+                password char NOT NULL,
+                'is_admin' bit NOT NULL DEFAULT 0,
+                PRIMARY KEY (userid)
+            )"
+    );
+
 
 }catch(PDOException $e){
     echo "Connection failed: " . $e->getMessage();
