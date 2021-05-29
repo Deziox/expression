@@ -24,6 +24,7 @@
             $empty = true;
         }
         if(!$empty){
+            echo "Test";
             $email = $_POST['email'];
             $username = $_POST['username'];
             $password = $_POST['password'];
@@ -48,6 +49,7 @@
 
         //Check first if user or email already exists in db
         if(!array_filter($errors)){
+            echo "Test 2";
             try{
                 $db = new PDO("mysql:host=$cleardb_server;dbname=$cleardb_db",$cleardb_username,$cleardb_password);
                 $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -75,7 +77,7 @@
                     header("location: login.php");
                 }
             }catch(PDOException $e){
-                //echo "Connection failed: " . $e->getMessage();
+                echo "Connection failed: " . $e->getMessage();
             }
         }
     }
