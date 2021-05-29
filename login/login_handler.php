@@ -50,7 +50,7 @@ if(isset($_POST['submit'])){
                         "username" => $result['username'],
                         "is_admin" => $result['is_admin']
                     );
-                    header("location: ../login/login_success.php");
+                    header("location: login_success.php");
                 }else{
                     $errors['password'] = "Password is invalid";
                 }
