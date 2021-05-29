@@ -18,7 +18,8 @@ try{
     echo "Connected Successfully";
 
     $stmt = $db->prepare(
-        "CREATE TABLE users (
+        "DROP TABLE IF EXISTS users;
+            CREATE TABLE users (
                 userid int(11) AUTO_INCREMENT,
                 email varchar(30) NOT NULL DEFAULT '',
                 password char NOT NULL,
