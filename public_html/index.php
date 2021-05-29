@@ -25,7 +25,7 @@ require('../vendor/autoload.php');
 
 <!-- Navbar -->
 <nav id="mainNavbar" class="scrolled navbar navbar-dark navbar-expand-md py-0 px-5 fixed-top justify-content-around">
-    <a href="index.html" class="navbar-brand"><img class="d-none d-lg-inline col-md-1"
+    <a href="index.php" class="navbar-brand"><img class="d-none d-lg-inline col-md-1"
                                                    src="" alt="">CS490</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggl navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@ require('../vendor/autoload.php');
     <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="register.html" class="nav-link">Register</a>
+                <a href="register.php" class="nav-link">Register</a>
             </li>
 
         </ul>
@@ -51,8 +51,8 @@ require('../vendor/autoload.php');
         <div class="d-flex h-100 text-center justify-content-center align-items-center">
             <div class="w-10 text-white">
                 <h1 class="display-3">*Placeholder*</h1>
-                <a href="login.html" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Log In</a>
-                <a href="register.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register</a>
+                <a href="login.php" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Log In</a>
+                <a href="register.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register</a>
 
 
             </div>
