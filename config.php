@@ -1,10 +1,9 @@
 <?php
-
 $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-foreach($cleardb_url as $value){
-    echo $value . "<br>";
-}
+//foreach($cleardb_url as $value){
+//    echo $value . "<br>";
+//}
 
 $cleardb_server = $cleardb_url["host"];
 $cleardb_username = $cleardb_url["user"];
