@@ -2,7 +2,7 @@
 /**
  * @var array $errors
  */
-include('../login/register_handler.php');
+    include('../login/register_handler.php');
 ?>
 
 <!doctype html>
@@ -54,8 +54,8 @@ include('../login/register_handler.php');
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6>
-                        <label for="password">Password</label>
+                    <div class="form-group col-md-6">
+                        <label form="password">Password</label>
                         <?php echo "<div class=\"error\">".$errors['password']."</div>";?>
                         <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                     </div>
