@@ -1,4 +1,10 @@
 <?php
+/**
+ * @var array $errors
+ * @var string $username
+ * @var string $email
+ */
+    include('../login/register_handler.php');
 ?>
 
 <!doctype html>
@@ -18,14 +24,14 @@
 <div class="container">
     <!-- navbar -->
     <nav id="regNavbar" class="navbar navbar-dark navbar-expand-md py-0 px-5 fixed-top justify-content-around">
-        <a href="index.html" class="navbar-brand"><img class="d-none d-lg-inline col-lg-1" src="imgs/goldensquarelogo.png" alt="">CS490</a>
+        <a href="index.php" class="navbar-brand"><img class="d-none d-lg-inline col-lg-1" src="imgs/goldensquarelogo.png" alt="">CS490</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggl navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navLinks">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="login.html" class="nav-link">Log In</a>
+                    <a href="login.php" class="nav-link">Log In</a>
                 </li>
             </ul>
         </div>
@@ -36,26 +42,33 @@
         <div class="jumbotron pt-5">
             <div class="align-self-center mb-2">Enter your information:</div>
 
-            <form>
+            <form action="register.php" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="firstName">Username</label>
-                        <input type="text" class="form-control" id="username" placeholder="John">
+                        <label for="Username">Username</label>
+                        <?php echo "<div class=\"error\">".$errors['username']."</div>";?>
+                        <input type="text" class="form-control" id="username" placeholder="John" <?php echo 'value="'.$username.'"'?> name="username">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="Email">E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        <?php echo "<div class=\"error\">".$errors['email']."</div>";?>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" <?php echo 'value="'.$email.'"'?>name="email">
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-6">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <?php echo "<div class=\"error\">".$errors['password']."</div>";?>
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="confirmpassword">Confirm Password</label>
+                        <?php echo "<div class=\"error\">".$errors['confirm']."</div>";?>
+                        <input type="password" class="form-control" id="password" placeholder="confirm password" name="confirm-password">
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
-
+                <button type="submit" name="submit" class="btn btn-primary" value="register">Submit</button>
         </div>
 
 
@@ -76,5 +89,3 @@
 
 </body>
 </html>
-
-

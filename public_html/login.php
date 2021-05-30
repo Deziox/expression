@@ -1,4 +1,8 @@
 <?php
+/**
+ * @var array $errors
+ */
+include('../login/login_handler.php');
 ?>
 
 <!doctype html>
@@ -18,14 +22,14 @@
 <div class="container">
     <!-- navbar -->
     <nav id="regNavbar" class="navbar navbar-dark navbar-expand-md py-0 px-5 fixed-top justify-content-around">
-        <a href="index.html" class="navbar-brand"><img class="d-none d-lg-inline col-lg-1" src="imgs/goldensquarelogo.png" alt="">CS490</a>
+        <a href="index.php" class="navbar-brand"><img class="d-none d-lg-inline col-lg-1" src="imgs/goldensquarelogo.png" alt="">CS490</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggl navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navLinks">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="register.html" class="nav-link">Register</a>
+                    <a href="register.php" class="nav-link">Register</a>
                 </li>
             </ul>
         </div>
@@ -36,21 +40,23 @@
         <div class="jumbotron pt-5">
             <div class="align-self-center mb-2">Enter Login:</div>
 
-            <form>
+            <form action="login.php" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="Email">E-mail</label>
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        <?php echo "<div class=\"error\">".$errors['email']."</div>";?>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <?php echo "<div class=\"error\">".$errors['password']."</div>";?>
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 
         </div>
 

@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['user'])){
+    header("location: /login.php");
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,7 +27,7 @@
 
     <!-- Navbar -->
     <nav id="mainNavbar" class="scrolled navbar navbar-dark navbar-expand-md py-0 px-5 fixed-top justify-content-around">
-        <a href="index.html" class="navbar-brand"><img class="d-none d-lg-inline col-md-1"
+        <a href="index.php" class="navbar-brand"><img class="d-none d-lg-inline col-md-1"
                 src="" alt="">CS490</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggl navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,7 +35,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navLinks">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">Log Out</a>
+                    <a href="logout.php" class="nav-link">Log Out</a>
                 </li>
            
             </ul>
