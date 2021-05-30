@@ -1,3 +1,5 @@
+<?php include("login_success.php");?>
+
 <!doctype html>
 <html lang="en">
   <head>
