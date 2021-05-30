@@ -1,3 +1,4 @@
 vendor/
+test-ignore/
 .idea/
 .env
