@@ -57,14 +57,14 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label form="password">Password</label>
+                        <label for="password">Password</label>
                         <?php echo "<div class=\"error\">".$errors['password']."</div>";?>
                         <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="password">Confirm Password</label>
+                        <label for="confirmpassword">Confirm Password</label>
                         <?php echo "<div class=\"error\">".$errors['confirm']."</div>";?>
-                        <input type="password" class="form-control" id="password" placeholder="Password" name="confirm-password">
+                        <input type="password" class="form-control" id="password" placeholder="confirm password" name="confirm-password">
                     </div>
                 </div>
 
