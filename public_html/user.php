@@ -1,4 +1,9 @@
-<?php include("login_success.php");?>
+<?php
+session_start();
+if(!isset($_SESSION['user'])){
+    header("location: /login.php");
+}
+?>
 
 <!doctype html>
 <html lang="en">
