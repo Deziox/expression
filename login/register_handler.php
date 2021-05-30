@@ -5,29 +5,39 @@
  * @var string $cleardb_password
  * @var string $cleardb_db
  */
+    session_start();
+    if(isset($_SESSION['user'])){
+        header("location: login_success.php");
+    }
     require('../config.php');
 
-    $errors = array('email'=>'','username'=>'','password'=>'');
+    $errors = array('email'=>'','username'=>'','password'=>'','confirm'=>'');
     $empty = false;
+
+    $username = "";
+    $email = "";
 
     if(isset($_POST['submit'])){
         if(empty($_POST['email'])){
             $errors['email'] = "An email is required";
             $empty = true;
+        }else{
+            $email = $_POST['email'];
         }
         if(empty($_POST['username'])){
             $errors['username'] = "A username is required";
             $empty = true;
+        }else{
+            $username = $_POST['username'];
         }
+
         if(empty($_POST['password'])){
             $errors['password'] = "Password cannot be empty";
             $empty = true;
         }
-        if(!$empty){
-            $email = $_POST['email'];
-            $username = $_POST['username'];
-            $password = $_POST['password'];
 
+        if(!$empty){
+            $password = $_POST['password'];
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $errors['email'] = "Not a Valid Email";
             }
@@ -43,6 +53,10 @@
 
             if (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
                 $errors['password'] = "Password must be at least 8 characters long and should have one upper case letter, one number, and one special character.";
+            }else{
+                if($password != $_POST['confirm-password']) {
+                    $errors['confirm'] = "Passwords must match to continue";
+                }
             }
         }
 

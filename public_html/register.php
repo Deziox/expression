@@ -1,6 +1,8 @@
 <?php
 /**
  * @var array $errors
+ * @var string $username
+ * @var string $email
  */
     include('../login/register_handler.php');
 ?>
@@ -45,12 +47,12 @@
                     <div class="form-group col-md-6">
                         <label for="Username">Username</label>
                         <?php echo "<div class=\"error\">".$errors['username']."</div>";?>
-                        <input type="text" class="form-control" id="username" placeholder="John" name="username">
+                        <input type="text" class="form-control" id="username" placeholder="John" <?php echo 'value="'.$username.'"'?> name="username">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="Email">E-mail</label>
                         <?php echo "<div class=\"error\">".$errors['email']."</div>";?>
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" <?php echo 'value="'.$email.'"'?>name="email">
                     </div>
                 </div>
                 <div class="form-row">
@@ -61,7 +63,8 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="password">Confirm Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                        <?php echo "<div class=\"error\">".$errors['confirm']."</div>";?>
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="confirm-password">
                     </div>
                 </div>
 
