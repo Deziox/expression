@@ -57,10 +57,10 @@ if(isset($_SESSION['user'])){
     <div class="container h-100">
         <div class="d-flex h-100 text-center justify-content-center align-items-center">
             <div class="w-10 text-white">
-                <h1 class="display-3">*Placeholder*</h1>
+                <img src="images/expression-logo.png" style="width:700px;height:302px;">
+<!--                <h1 class="display-3">*Placeholder*</h1>-->
                 <a href="login.php" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Log In</a>
                 <a href="register.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register</a>
-
 
             </div>
         </div>

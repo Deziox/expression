@@ -22,7 +22,7 @@ try{
                 email char NOT NULL DEFAULT '',
                 username varchar(30) NOT NULL,
                 password char NOT NULL,
-                posts varchar DEFAULT NULL,
+                posts varchar(100) DEFAULT NULL,
                 is_admin bit NOT NULL DEFAULT 0,
                 PRIMARY KEY (userid)
             )"
