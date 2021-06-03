@@ -1,5 +1,8 @@
 <?php
 require('../vendor/autoload.php');
+
+session_start();
+
 //include('index.html');
 if(isset($_SESSION['user'])){
     if($_SESSION['user']['is_admin'] == 1) {
