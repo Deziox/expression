@@ -89,7 +89,7 @@
                     header("location: login.php");
                 }
             }catch(PDOException $e){
-                echo "Connection failed: " . $e->getMessage();
+                //echo "Connection failed: " . $e->getMessage();
             }
         }
     }

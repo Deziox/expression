@@ -10,8 +10,6 @@ session_start();
 //Milestone Alpha purposes (possibly additional functionalities for admin for future milestones)
 require('config.php');
 
-// Connect to DB
-//$conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
 try{
     $db = new PDO("mysql:host=$cleardb_server;dbname=$cleardb_db",$cleardb_username,$cleardb_password);
     $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -29,8 +27,32 @@ try{
                 PRIMARY KEY (userid)
             )"
     );
+
+    $r = $stmt->execute();
+
+    $stmt = $db->prepare(
+        "DROP TABLE IF EXISTS chats;
+            CREATE TABLE chats (
+                chat_id int(11) AUTO_INCREMENT PRIMARY KEY,
+                users MEDIUMTEXT NOT NULL,
+                messages MEDIUMTEXT
+            );"
+    );
+
+    $r = $stmt->execute();
+
+    $stmt = $db->prepare(
+        "DROP TABLE IF EXISTS message;
+            CREATE TABLE message (
+                message_id int(11) AUTO_INCREMENT PRIMARY KEY,
+                chat_id int(11) NOT NULL,
+                text varchar(500) NOT NULL,
+                FOREIGN KEY (chat_id) REFERENCES chats(chat_id)
+            );"
+    );
+
     $r = $stmt->execute();
 
 }catch(PDOException $e){
-    echo "Connection failed: " . $e->getMessage();
+    //echo "Connection failed: " . $e->getMessage();
 }

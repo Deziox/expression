@@ -56,7 +56,7 @@ if(isset($_POST['submit'])){
                 }
             }
         }catch(PDOException $e){
-            echo "Connection failed: " . $e->getMessage();
+            //echo "Connection failed: " . $e->getMessage();
         }
     }
 }

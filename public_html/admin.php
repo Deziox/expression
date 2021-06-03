@@ -2,6 +2,10 @@
 session_start();
 if(!isset($_SESSION['user'])){
     header("location: /login.php");
+}else{
+    if($_SESSION['user']['is_admin'] != 1){
+        header("location: /user.php");
+    }
 }
 ?>
 
