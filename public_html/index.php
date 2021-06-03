@@ -34,7 +34,7 @@ if(isset($_SESSION['user'])){
 <!-- Navbar -->
 <nav id="mainNavbar" class="scrolled navbar navbar-dark navbar-expand-md py-0 px-5 fixed-top justify-content-around">
     <a href="index.php" class="navbar-brand"><img class="d-none d-lg-inline col-md-1"
-                                                   src="" alt="">CS490</a>
+                                                   src="" alt="">EXPRS</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggl navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -57,7 +57,7 @@ if(isset($_SESSION['user'])){
     <div class="container h-100">
         <div class="d-flex h-100 text-center justify-content-center align-items-center">
             <div class="w-10 text-white">
-                <img src="images/expression-logo.png" style="width:700px;height:302px;">
+                <img src="images/expression-logo.png" style="width:347px;height:151px;">
 <!--                <h1 class="display-3">*Placeholder*</h1>-->
                 <a href="login.php" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Log In</a>
                 <a href="register.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register</a>
