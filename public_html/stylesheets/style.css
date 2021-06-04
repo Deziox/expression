@@ -52,7 +52,7 @@ img {
     background-color: black;
     opacity: 0.6;
     z-index: 1;
-    background-image: url(public_html/images/userbackground.png);
+    background-image: url(images/userbackground.png);
   }
   .mainNavbar a:hover {
       color: rgb(41, 114, 182);

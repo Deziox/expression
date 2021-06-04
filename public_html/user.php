@@ -24,7 +24,7 @@ if(!isset($_SESSION['user'])){
 </head>
 
 
-<body id="body user">
+<body id="user">
 
     <!-- Navbar -->
     <nav id="mainNavbar"
@@ -36,7 +36,7 @@ if(!isset($_SESSION['user'])){
         <div class="collapse navbar-collapse justify-content-end" id="navLinks">
         <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="#" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">#Go</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go</button>
             </form>
             <ul class="navbar-nav">
                 <li class="nav-item">
