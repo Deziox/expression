@@ -43,16 +43,9 @@ img {
     font-weight: 200;
     font-size: 1.1rem;
   }
-  body #user {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    opacity: 0.6;
-    z-index: 1;
-    background-image: url(images/userbackground.png);
+  body .user {
+
+    background-image: url(/public_html/images/userbackground.png);
   }
   .mainNavbar a:hover {
       color: rgb(41, 114, 182);

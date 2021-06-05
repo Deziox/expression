@@ -24,7 +24,7 @@ if(!isset($_SESSION['user'])){
 </head>
 
 
-<body id="user">
+<body class="user">
 
     <!-- Navbar -->
     <nav id="mainNavbar"
