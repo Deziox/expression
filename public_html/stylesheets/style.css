@@ -4,10 +4,13 @@
 
 /* Font Weights 200,400, 700 */
 
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  body {
+    font-family: "Oswald";
   }
   
   body header{
@@ -43,7 +46,7 @@ img {
     font-weight: 200;
     font-size: 1.1rem;
   }
-  body .user {
+  .user {
 
     background-image: url(/public_html/images/userbackground.png);
   }
