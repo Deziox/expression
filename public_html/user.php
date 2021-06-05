@@ -70,6 +70,15 @@ if(!isset($_SESSION['user'])){
                     <h3 class="card-title">Card title</h>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
                         content. This content is a little bit longer.</p>
+                    <form>
+                        <div class="form-group row">
+                        <label for="readcomments" class="col-form-label">Comments</label>
+                        <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="readcomments" value="Some comment">
+                        </div>
+
+                    </div>
+                    </form>
                 </div>
                 <input type="text" class="form-control" placeholder = "Comment">
                 <div class="container">
