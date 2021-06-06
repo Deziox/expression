@@ -65,7 +65,7 @@ if(!isset($_SESSION['user'])){
     <div class="container mt-5">
         <div class="card-deck">
             <div class="card">
-                <img class="card-img-top" src="/public_html/imags/piano.jpg" alt="Card image cap">
+                <img class="card-img-top" src="/public_html/images/piano.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h2 class="card-title">Card title</h>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
@@ -88,7 +88,7 @@ if(!isset($_SESSION['user'])){
                 </div>
             </div>
             <div class="card">
-                <img class="card-img-top" src="/public_html/imags/piano.jpg" alt="Card image cap">
+                <img class="card-img-top" src="/public_html/images/piano.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h3 class="card-title">Card title<h3>
                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -98,7 +98,7 @@ if(!isset($_SESSION['user'])){
                 </div>
             </div>
             <div class="card">
-                <img class="card-img-top" src="/public_html/imags/piano.jpg" alt="Card image cap">
+                <img class="card-img-top" src="/public_html/images/piano.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h2 class="card-title">Card title</h3>
                     <p class="card-text">This is a wider card with supporting text below as a nn.</p>
