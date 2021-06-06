@@ -110,7 +110,7 @@ if(!isset($_SESSION['user'])){
             </div>
         </div>
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
           Create New Post
         </button>
         

@@ -43,6 +43,11 @@
     font-size: 1.1rem !important;
     color: rgb(41, 114, 182);
   }
+  /* new post modal */
+  .modal body {
+    max-height: 50%;
+    overflow-y: auto;
+  }
   body #headline {
     /* border-radius: 25px; */
     background-image: url(pictures/swirl.png);
