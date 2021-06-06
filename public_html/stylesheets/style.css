@@ -32,9 +32,9 @@
   
   body h3{
     font-family: "Oswald";
-    font-weight: 400;
+    font-weight: 200;
     color: rgb(27,65,86);
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   body #headline {
     /* border-radius: 25px; */

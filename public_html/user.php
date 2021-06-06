@@ -67,12 +67,12 @@ if(!isset($_SESSION['user'])){
             <div class="card">
                 <img class="card-img-top" src="..." alt="Card image cap">
                 <div class="card-body">
-                    <h3 class="card-title">Card title</h>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    <h2 class="card-title">Card title</h>
+                    <p class="card-text display-3">This is a wider card with supporting text below as a natural lead-in to additional
                         content. This content is a little bit longer.</p>
                     <form>
                         <div class="form-group row">
-                        <label for="readcomments" class="col-form-label">Comments</label>
+                        <label for="readcomments" class="col-form-label"><h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit molestias obcaecati voluptatibus optio dignissimos enim autem tenetur nisi. Molestiae et dolorem voluptatibus voluptatem corporis maxime quasi, ullam aliquid cum harum dolorum sapiente laudantium inventore dolor consectetur facilis fugit, officia, nobis saepe tempora quas ea autem sed. Sapiente ratione voluptas dolorum.</h3></label>
                         <div class="col-sm-10">
                         <input type="text" readonly class="form-control-plaintext" id="readcomments" value="Some comment">
                         </div>
@@ -100,7 +100,7 @@ if(!isset($_SESSION['user'])){
             <div class="card">
                 <img class="card-img-top" src="..." alt="Card image cap">
                 <div class="card-body">
-                    <h3 class="card-title">Card title</h3>
+                    <h2 class="card-title">Card title</h3>
                     <p class="card-text">This is a wider card with supporting text below as a nn.</p>
                 </div>
                 <div class="card-footer">
