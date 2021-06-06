@@ -15,26 +15,33 @@
   
   body header{
       font-family: "Oswald";
-      font-weight: 200 !important;
+      font-weight: 400 !important;
   }
   body h1{
       font-family: "Oswald";
       font-weight: 400;
       
   }
-  
+  /* card titles */
   body h2{
     font-family: "Oswald";
     font-weight: 200 !important;
     font-size: 1.25rem !important;
     color: rgb(152, 192, 214) !important;
   }
-  
+  /* card descriptions */
   body h3{
     font-family: "Oswald";
     font-weight: 200;
     color: rgb(27,65,86);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+  }
+/* comments */
+  body h4 {
+    font-family: "Oswald";
+    font-weight: 200 !important;
+    font-size: 1.1rem 1important;
+    color: rgb(41, 114, 182);
   }
   body #headline {
     /* border-radius: 25px; */
