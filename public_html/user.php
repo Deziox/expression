@@ -140,7 +140,7 @@ if(!isset($_SESSION['user'])){
                         </div>
                         <div class="form-group">
                           <label for="">Message</label>
-                          <textarea name="message" id="message" rows="4"></textarea>
+                          <textarea name="message" id="message" cols="40" rows="4"></textarea>
                           <small id="helpId" class="form-text text-muted">Say something</small>
                         </div>
                         <div class="form-group">
