@@ -38,6 +38,14 @@ if (!isset($_SESSION['user'])) {
             <input class="form-control mr-sm-2" type="search" placeholder="#" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go</button>
         </form>
+        <!-- Trigger NEW POST modal -->
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modelId">
+            Create a New Post
+        </button>
+            <!-- Trigger CHAT modal-->
+        <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#modelChat">
+            Messages
+        </button>
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a href="logout.php" class="nav-link">Log Out</a>
@@ -67,10 +75,6 @@ if (!isset($_SESSION['user'])) {
 
 <div class="container mt-5">
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
-        Create a New Post
-    </button>
 
     <!-- Modal -->
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -113,6 +117,41 @@ if (!isset($_SESSION['user'])) {
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" id="post">Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHAT MODAL -->
+    <div class="modal fade" id="modelChat" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">@username</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="container d-flex justify-content center">
+                    <div class="d-flex flex-row p-3" id="friendMessage"> <i class="fas fa-user-friends    "></i>
+                    <div class="chat ml-2 p-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, maxime? Eum saepe velit eius magni, quos accusantium similique deleniti illum. Ad vel odio dolorem illum voluptatibus in fugit debitis recusandae.</div>
+                    </div>
+                    <div class="d-flex flex-row p-3">
+            <div class="bg-white mr-2 p-3"><span class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, eveniet laudantium repudiandae unde dignissimos officiis, ea nulla atque vitae numquam enim! Deserunt dolores harum eveniet?</span></div> <i class="fas fa-user-friends    "></i>
+            </div>
+                
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form action="#" class="usermessage" autocomplete="off">
+                            <div class="form-group">
+                                <label for="usermessage">Message: </label>
+                                <input type="text" class="form-control" name="usermessage" id="usermessage" placeholder="Type Here">
+                                <button type="button" class="btn btn-primary" id="send">Send</button>
+
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
