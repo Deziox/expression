@@ -1,8 +1,9 @@
 {
   "require" : {
     "ext-mbstring": "*",
-    "aws/aws-sdk-php": "~3.0",
-    "ext-pdo": "*"
+    "aws/aws-sdk-php": "*",
+    "ext-pdo": "*",
+    "phpmailer/phpmailer": "^6.4"
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*"
