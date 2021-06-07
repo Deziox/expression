@@ -33,7 +33,7 @@ if (!isset($_SESSION['user'])) {
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggl navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navLinks">
+    <div class="collapse navbar-collapse justify-content-end mx-1" id="navLinks">
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="#" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go</button>
@@ -133,12 +133,12 @@ if (!isset($_SESSION['user'])) {
                     </button>
                 </div>
                 <div class="container d-flex justify-content center">
-                    <div class="d-flex flex-row p-3" id="friendMessage"> <i class="fas fa-user-friends    "></i>
+                    <div class="d-flex flex-row p-3" id="friendMessage"> <i class="fas fa-user-friends"></i>
                     <div class="chat ml-2 p-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, maxime? Eum saepe velit eius magni, quos accusantium similique deleniti illum. Ad vel odio dolorem illum voluptatibus in fugit debitis recusandae.</div>
                     </div>
                     <div class="d-flex flex-row p-3">
-            <div class="bg-white mr-2 p-3"><span class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, eveniet laudantium repudiandae unde dignissimos officiis, ea nulla atque vitae numquam enim! Deserunt dolores harum eveniet?</span></div> <i class="fas fa-user-friends    "></i>
-            </div>
+                        <div class="bg-white mr-2 p-3" id="userMessage"><span class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, eveniet laudantium repudiandae unde dignissimos officiis, ea nulla atque vitae numquam enim! Deserunt dolores harum eveniet?</span></div> <i class="fas fa-user-friends"></i>
+                     </div>
                 
                 </div>
                 <div class="modal-body">
