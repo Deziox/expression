@@ -118,7 +118,7 @@ if(!isset($_SESSION['user'])){
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
-      Launch
+      Create a New Post
     </button>
     
     <!-- Modal -->
@@ -126,7 +126,7 @@ if(!isset($_SESSION['user'])){
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                     <div class="modal-header">
-                            <h5 class="modal-title">Create a New Post</h5>
+                            <h5 class="modal-title">Creating a New Post</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -135,24 +135,24 @@ if(!isset($_SESSION['user'])){
                     <div class="container-fluid">
                         <div class="form-group">
                           <label for="upload">Upload</label>
-                          <input type="file" class="form-control-file" name="upload" id="upload" placeholder="Add a picture" aria-describedby="fileHelpId">
-                          <small id="fileHelpId" class="form-text text-muted">Help text</small>
+                          <input type="file" class="form-control-file" name="upload" id="upload" placeholder="" aria-describedby="fileHelpId">
+                          <small id="fileHelpId" class="form-text text-muted">Add an image</small>
                         </div>
                         <div class="form-group">
                           <label for="">Message</label>
                           <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-                          <small id="helpId" class="form-text text-muted">Help text</small>
+                          <small id="helpId" class="form-text text-muted">Say something</small>
                         </div>
                         <div class="form-group">
                           <label for="">Tags</label>
                           <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-                          <small id="helpId" class="form-text text-muted">Help text</small>
+                          <small id="helpId" class="form-text text-muted">Make sure to add a # to any tags</small>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-primary">Post</button>
                 </div>
             </div>
         </div>
