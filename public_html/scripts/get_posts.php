@@ -17,7 +17,10 @@ if (isset($_SESSION['user'])) {
         $db = new PDO("mysql:host=$cleardb_server;dbname=$cleardb_db", $cleardb_username, $cleardb_password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $db->prepare("SELECT * FROM posts
+        $stmt = $db->prepare("SELECT *
+                                    FROM posts
+                                    INNER JOIN users
+                                    ON posts.userid = users.userid
                                     ORDER BY post_time DESC");
         $r = $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -39,7 +42,7 @@ if (isset($_SESSION['user'])) {
                 <img class="card-img-top" src="'.$img_url.'" alt="Card image cap">
                 <div class="card-body">
                 <h3 class="card-title font-weight-bold">'.$result['title'].'</h3>
-                <label>'.'user_name'.'</label>
+                <label>@'.$result['username'].'</label>
                 <p class="card-text">'.$result['description'].'</p>
                 <form>
                 <div class="form-group row">
