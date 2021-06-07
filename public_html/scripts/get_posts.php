@@ -55,7 +55,7 @@ if (isset($_SESSION['user'])) {
                     </div>
                     <div class="col-sm">
                     <input type="text" readonly class="form-control-plaintext" id="readcomments"
-                               value="2:05 pm 06.07.21">
+                               value="2:20 pm 06.07.21">
                     </div>
                 </div>
                 <div class="form-group row">
