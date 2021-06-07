@@ -48,12 +48,13 @@ if (isset($_SESSION['user'])) {
                 //display all comments
                 $output .= '<div class="scroll overflow-auto"><form>
                 <div class="form-group row">
-                    <label for="readcomments" class="col-form-label"><h3 style="margin-left: 12px;">@someuser</h3>
-                    </label>
                     <div>
                         <input type="text" readonly class="form-control-plaintext" id="readcomments"
-                           value="#sometag">
+                        value="#sometag">
                     </div>
+                    <label for="readcomments" class="col-form-label"><h3 style="margin-left: 12px;">@someuser</h3>
+                    </label>
+
                     <div class="col-sm-7">
                         <div class="col-form-label">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit blandit augue, quis vehicula urna hendrerit in. Nam congue libero quis augue facilisis sagittis. Sed egestas libero sit amet metus imperdiet efficitur. Nullam fermentum, sem id eleifend facilisis, eros sapien porttitor augue, vitae gravida lorem turpis quis nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla a augue vitae massa facilisis euismod. Aliquam vitae pretium lorem. Nullam egestas velit et massa interdum, in mattis justo iaculis. Cras lacinia, diam id rhoncus suscipit, arcu ligula porttitor justo, at vestibulum mi diam id libero. Duis ac libero rhoncus, vehicula nulla id, posuere risus. Nulla lectus orci, ultrices quis maximus at, ornare at urna. Vivamus nec finibus mi. Nam venenatis dignissim mauris. Nam tristique aliquam mauris, accumsan feugiat nisl molestie a. Maecenas lorem quam, pellentesque id sagittis nec, iaculis vel erat. Sed in mollis purus.</div>
                     </div>
