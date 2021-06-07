@@ -45,7 +45,7 @@ if (isset($_SESSION['user'])) {
                 <label>@'.$result['username'].'</label>
                 <p class="card-text">'.$result['description'].'</p>
                 <form>
-                <div class="form-group row">
+                <div class="form-group row border-info">
                     <label for="readcomments" class="col-form-label"><h3>Lorem ipsum dolor sit amet consectetur
                             adipisicing elit. Impedit molestias obcaecati voluptatibus optio dignissimos enim autem
                             tenetur nisi. Molestiae et dolorem voluptatibus voluptatem corporis maxime quasi, ullam
