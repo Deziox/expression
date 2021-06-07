@@ -9,7 +9,7 @@ if(!isset($_SESSION['user'])){
 <html lang="en">
 
 <head>
-    <title>A Title</title>
+    <title>Expression</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
