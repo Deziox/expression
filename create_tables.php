@@ -114,6 +114,8 @@ try{
                 comment_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
                 userid int(11) NOT NULL,
                 post_id int(11) NOT NULL,
+                text varchar(100) NOT NULL,
+                comment_date DATETIME NOT NULL,
                 FOREIGN KEY (userid) REFERENCES users(userid) ON DELETE CASCADE,
                 FOREIGN KEY (post_id) REFERENCES posts(post_id) ON DELETE CASCADE
             );"
