@@ -134,19 +134,19 @@ if(!isset($_SESSION['user'])){
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="form-group">
-                          <label for="upload">Upload</label>
+                          <label for="upload">Upload: </label>
                           <input type="file" class="form-control-file" name="upload" id="upload" placeholder="" aria-describedby="fileHelpId">
                           <small id="fileHelpId" class="form-text text-muted">Add an image</small>
                         </div>
                         <div class="form-group">
-                          <label for="">Message</label>
+                          <label for="">Message: </label>
                           <textarea name="message" id="message" cols="40" rows="4"></textarea>
                           <small id="helpId" class="form-text text-muted">Say something</small>
                         </div>
                         <div class="form-group">
-                          <label for="">Tags</label>
+                          <label for="">Tags: </label>
                           <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-                          <small id="helpId" class="form-text text-muted">Make sure to add a # to any tags</small>
+                          <small id="helpId" class="form-text text-muted">Make sure to include a #</small>
                         </div>
                     </div>
                 </div>
