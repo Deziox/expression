@@ -70,7 +70,7 @@ if (!isset($_SESSION['user'])) {
 
 <!-- USER CARDS -->
 <br>
-<div class="container mt-5 post-card-area">
+<div class="container mt-5 post-card-area col-md-4">
 </div>
 
 <div class="container mt-5">
