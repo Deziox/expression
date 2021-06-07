@@ -43,15 +43,15 @@ if (isset($_SESSION['user'])) {
                 <div class="card-body">
                 <h3 class="card-title font-weight-bold">' . $result['title'] . '</h3>
                 <label>@' . $result['username'] . '</label>
+                <div>
+                    <input type="text" readonly class="form-control-plaintext" id="readcomments"
+                    value="#sometag">
+                </div>
                 <p class="card-text">' . $result['description'] . '</p>';
 
                 //display all comments
                 $output .= '<div class="scroll overflow-auto"><form>
                 <div class="form-group row">
-                    <div>
-                        <input type="text" readonly class="form-control-plaintext" id="readcomments"
-                        value="#sometag">
-                    </div>
                     <label for="readcomments" class="col-form-label"><h3 style="margin-left: 12px;">@someuser</h3>
                     </label>
 
