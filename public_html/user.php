@@ -123,17 +123,31 @@ if(!isset($_SESSION['user'])){
     
     <!-- Modal -->
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                     <div class="modal-header">
-                            <h5 class="modal-title">Modal title</h5>
+                            <h5 class="modal-title">Create a New Post</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                         </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        Add rows here
+                        <div class="form-group">
+                          <label for="upload">Upload</label>
+                          <input type="file" class="form-control-file" name="upload" id="upload" placeholder="Add a picture" aria-describedby="fileHelpId">
+                          <small id="fileHelpId" class="form-text text-muted">Help text</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="">Message</label>
+                          <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+                          <small id="helpId" class="form-text text-muted">Help text</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="">Tags</label>
+                          <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
+                          <small id="helpId" class="form-text text-muted">Help text</small>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
