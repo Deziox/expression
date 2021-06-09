@@ -34,9 +34,9 @@ if (!isset($_SESSION['user'])) {
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end mx-1" id="navLinks">
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0 post-search-form">
             <input class="form-control mr-sm-2" type="search" placeholder="#" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go</button>
+            <button type="button" class="btn btn-outline-success my-2 my-sm-0" id="post-search-button">Go</button>
         </form>
         <!-- Trigger NEW POST modal -->
         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modelId">

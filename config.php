@@ -8,4 +8,3 @@ $cleardb_db = substr($cleardb_url["path"],1);
 
 $active_group = 'default';
 $query_builder = TRUE;
-
