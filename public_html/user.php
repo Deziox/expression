@@ -42,7 +42,7 @@ if (!isset($_SESSION['user'])) {
         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modelId">
             Create a New Post
         </button>
-            <!-- Trigger CHAT modal-->
+        <!-- Trigger CHAT modal-->
         <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#modelChat">
             Messages
         </button>
@@ -54,6 +54,23 @@ if (!isset($_SESSION['user'])) {
     </div>
 </nav>
 
+<!--Chat Notification-->
+<div role="alert" aria-live="assertive" aria-atomic="true" class="toast position-fixed" data-autohide="false"
+     style="margin-top: 60px; margin-left: 10px;">
+    <div class="toast-header">
+        <svg class=" rounded mr-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg"
+             preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+            <rect fill="#2972b6" width="100%" height="100%"/>
+        </svg>
+        <strong class="mr-auto">EXPRS</strong>
+        <small></small>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="toast-body">
+    </div>
+</div>
 <!-- Header  -->
 
 <!-- <header>
@@ -123,31 +140,41 @@ if (!isset($_SESSION['user'])) {
     </div>
 
     <!-- CHAT MODAL -->
-    <div class="modal fade" id="modelChat" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal fade" id="modelChat" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">@username</h5>
+                    <!--                    <h5 class="modal-title">@username</h5>-->
+                    <form action="#" id="chat-search-form" autocomplete="off">
+                        <div class="row">
+                            <div class="col-sm-1"><h5>@</h5></div>
+                            <div class="col-sm-8"><input type="text" class="form-control" name="chat-receiver-username"
+                                                         id="chat_receiver_username" placeholder="username"></div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-primary" id="chat-search" name="chat-search">Search
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="container d-flex justify-content center">
-                    <div class="d-flex flex-row p-3 col-md-12" id="friendMessage"> <i class="fas fa-user-friends"></i>
-                    <div class="chat ml-2 p-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, maxime? Eum saepe velit eius magni, quos accusantium similique deleniti illum. Ad vel odio dolorem illum voluptatibus in fugit debitis recusandae.</div>
-                    </div>
-                </div>
-                <div class="d-flex flex-row p-3">
-                        <div class="bg-white mr-2 p-3" id="userMessage"><span class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, eveniet laudantium repudiandae unde dignissimos officiis, ea nulla atque vitae numquam enim! Deserunt dolores harum eveniet?</span></div> <i class="fas fa-user-friends"></i>
-                     </div>
                 <div class="modal-body">
+                    <div class="overflow-auto chat-box" style="height: 40vh; overflow-y: auto;">
+                    </div>
                     <div class="container-fluid">
-                        <form action="#" class="usermessage" autocomplete="off">
+                        <form action="#" class="chat-typing-area" autocomplete="off">
+                            <input type="hidden" name="sender_id" id="sender_id" value="<?php echo $_SESSION['user']['uid']; ?>">
+                            <input type="hidden" name="receiver_id" id="receiver_id" value="">
+                            <input type="hidden" id="message_ids" name="message_ids" value="">
                             <div class="form-group">
                                 <label for="usermessage">Message: </label>
-                                <input type="text" class="form-control" name="usermessage" id="usermessage" placeholder="Type Here">
-                                <button type="button" class="btn btn-primary" id="send">Send</button>
-
+                                <input type="text" class="form-control chat-input-field" name="usermessage"
+                                       id="usermessage"
+                                       placeholder="Type Here">
+                                <button type="button" class="btn btn-primary chat-send" id="chat-send">Send</button>
                             </div>
                         </form>
                     </div>
@@ -156,14 +183,14 @@ if (!isset($_SESSION['user'])) {
         </div>
     </div>
 
-<!--    <script>-->
-<!--        $('#exampleModal').on('show.bs.modal', event => {-->
-<!--            var button = $(event.relatedTarget);-->
-<!--            var modal = $(this);-->
-<!--            // Use above variables to manipulate the DOM-->
-<!---->
-<!--        });-->
-<!--    </script>-->
+    <!--    <script>-->
+    <!--        $('#exampleModal').on('show.bs.modal', event => {-->
+    <!--            var button = $(event.relatedTarget);-->
+    <!--            var modal = $(this);-->
+    <!--            // Use above variables to manipulate the DOM-->
+    <!---->
+    <!--        });-->
+    <!--    </script>-->
 
 
 </div>
@@ -184,20 +211,21 @@ if (!isset($_SESSION['user'])) {
 <script type="text/javascript" src="scripts/create-post.js"></script>
 <script type="text/javascript" src="scripts/list-posts.js"></script>
 <script type="text/javascript" src="scripts/comment.js"></script>
+<script type="text/javascript" src="scripts/chat.js"></script>
 <script>
-    function sendComment(id){
+    function sendComment(id) {
         var form = document.getElementById('comment_form_' + id);
 
         let xhr = new XMLHttpRequest();
-        xhr.open("POST","scripts/comment.php",true);
+        xhr.open("POST", "scripts/comment.php", true);
         xhr.onload = () => {
-            if(xhr.readyState === XMLHttpRequest.DONE){
-                if(xhr.status === 200){
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
                     let data = xhr.response;
-                    if(data == "empty"){
+                    if (data == "empty") {
                         console.log("empty message");
-                    }else if(data == "nosesh"){
-                    }else{
+                    } else if (data == "nosesh") {
+                    } else {
                     }
                 }
             }
@@ -207,6 +235,7 @@ if (!isset($_SESSION['user'])) {
     }
 </script>
 <script>
+    $('.toast').toast('show');
     $(function () {
         $(document).scroll(function () {
             var $nav = $("#mainNavbar");

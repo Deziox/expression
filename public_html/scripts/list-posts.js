@@ -46,10 +46,8 @@ window.onload = function(){
                                     if(xhr.status === 200){
                                         let data = xhr.response;
                                         if(data == "empty"){
-                                            //console.log("empty");
                                         }else if(data == "nosesh"){
                                         }else{
-                                            //console.log(data);
                                             element.innerHTML = data + element.innerHTML;
                                         }
                                     }

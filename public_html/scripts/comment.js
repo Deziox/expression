@@ -18,7 +18,7 @@
 //     }
 //
 //     let xhr = new XMLHttpRequest();
-//     xhr.open("POST","./get_chat.php",true);
+//     xhr.open("POST","./search_chat.php",true);
 //     xhr.onload = () => {
 //         if(xhr.readyState === XMLHttpRequest.DONE){
 //             if(xhr.status === 200){

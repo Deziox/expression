@@ -29,7 +29,7 @@ if (!isset($_SESSION['user'])) {
             echo $e->getMessage();
         }
 
-        echo "yur mum ".$_POST['comment']." ".$_POST['post_id'];
+        //echo "yur mum ".$_POST['comment']." ".$_POST['post_id'];
     }
 }
 
