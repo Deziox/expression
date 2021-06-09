@@ -104,7 +104,12 @@ if (isset($_SESSION['user'])) {
             $db = new PDO("mysql:host=$cleardb_server;dbname=$cleardb_db", $cleardb_username, $cleardb_password);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $stmt = $db->prepare("SELECT * 
+            $stmt = $db->prepare("SELECT posts.post_id,
+                                               posts.userid,
+                                               posts.title,
+                                               posts.description,
+                                               posts.image,
+                                               posts.post_time
                                         FROM posts
                                         INNER JOIN post_tag  
                                         ON posts.post_id = post_tag.post_id 
