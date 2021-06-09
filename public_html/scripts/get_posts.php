@@ -110,9 +110,10 @@ if (isset($_SESSION['user'])) {
                                         ON posts.post_id = post_tag.post_id 
                                         INNER JOIN tags 
                                         ON tags.tag_id = post_tag.tag_id
-                                        WHERE tags.text = (" . $tag . ")
+                                        WHERE tags.text = ?
                                         ORDER BY post_time DESC");
-            $r = $stmt->execute();
+
+            $r = $stmt->execute([$tag]);
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
             $checked_posts = "";
