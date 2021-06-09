@@ -176,17 +176,7 @@ if (isset($_SESSION['user'])) {
                     </div>
                     <br><br>';
 
-                    $stmt = $db->prepare("SELECT *
-                                        FROM posts
-                                        INNER JOIN users
-                                        ON posts.userid = users.userid
-                                        WHERE post_id NOT IN (" . $checked_posts . ")
-                                        ORDER BY post_time DESC");
-                    $r = $stmt->execute();
-                    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-                    if ($result) {
-                        $checked_posts .= ",";
-                    }
+
                 }
             }
         } catch (Exception $e) {
