@@ -43,7 +43,7 @@ document.getElementById("post-search-button").onclick = () => {
                                 document.getElementById("comment_ids_" + post_id).value = output;
                             }
 
-                            let xhr = new XMLHttpRequest();
+/*                            let xhr = new XMLHttpRequest();
                             //xhr.open("POST","scripts/get_comments.php",true);
                             xhr.onload = () => {
                                 if(xhr.readyState === XMLHttpRequest.DONE){
@@ -56,7 +56,7 @@ document.getElementById("post-search-button").onclick = () => {
                                         }
                                     }
                                 }
-                            }
+                            }*/
                             let formData = new FormData(form);
                             xhr.send(formData);
 
@@ -113,8 +113,8 @@ window.onload = function(){
                                 document.getElementById("comment_ids_" + post_id).value = output;
                             }
 
-                            let xhr = new XMLHttpRequest();
-                            //xhr.open("POST","scripts/get_comments.php",true);
+/*                            let xhr = new XMLHttpRequest();
+                            xhr.open("POST","scripts/get_comments.php",true);
                             xhr.onload = () => {
                                 if(xhr.readyState === XMLHttpRequest.DONE){
                                     if(xhr.status === 200){
@@ -126,7 +126,7 @@ window.onload = function(){
                                         }
                                     }
                                 }
-                            }
+                            }*/
                             let formData = new FormData(form);
                             xhr.send(formData);
 
