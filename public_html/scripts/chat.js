@@ -50,6 +50,59 @@ document.getElementById("chat-send").onclick = () =>{
     xhr.send(formData);
 }
 
+$('.chat-typing-area input').keydown(function (e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST","scripts/send_chat.php",true);
+        xhr.onload = () => {
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                    let data = xhr.response;
+                    if(data == "empty"){
+                        console.log("empty message");
+                    }else if(data == "nouser"){
+                        console.log("no valid user in search field");
+                    }else{
+                        inputField.value = "";
+                    }
+                }
+            }
+        }
+
+        let formData = new FormData(chatForm);
+        xhr.send(formData);
+        return false;
+    }
+});
+
+$('#chat-search-form input').keydown(function (e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST","scripts/search_chat.php",true);
+        xhr.onload = () => {
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                    let data = xhr.response;
+                    if(data == "nosesh"){
+                    }else if(data == "empty"){
+                    }else if(data == "nouser"){
+                        chatForm.querySelector("#receiver_id").value = ""
+                    }else{
+                        chatForm.querySelector("#receiver_id").value = data
+                        chatBox.innerHTML = "";
+                    }
+                }
+            }
+        }
+
+        let formData = new FormData(chatSearchForm);
+        xhr.send(formData);
+        return false;
+    }
+});
+
 document.getElementById("close-chat").onclick = () => {
     setTimeout(function(){
         chatBox.innerHTML = "";

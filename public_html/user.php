@@ -165,7 +165,7 @@ if (!isset($_SESSION['user'])) {
                     <div class="overflow-auto chat-box scroll" style="height: 40vh; overflow-y: auto;">
                     </div>
                     <div class="container-fluid">
-                        <form action="#" class="chat-typing-area" autocomplete="off">
+                        <form class="chat-typing-area" autocomplete="off">
                             <input type="hidden" name="sender_id" id="sender_id" value="<?php echo $_SESSION['user']['uid']; ?>">
                             <input type="hidden" name="receiver_id" id="receiver_id" value="">
                             <input type="hidden" id="message_ids" name="message_ids" value="">
@@ -183,6 +183,7 @@ if (!isset($_SESSION['user'])) {
             </div>
         </div>
     </div>
+
 
     <!--    <script>-->
     <!--        $('#exampleModal').on('show.bs.modal', event => {-->
@@ -215,6 +216,7 @@ if (!isset($_SESSION['user'])) {
 <script type="text/javascript" src="scripts/chat.js"></script>
 <script type="text/javascript" src="scripts/notification.js"></script>
 <script>
+    document.getElementById
     function sendComment(id) {
         var form = document.getElementById('comment_form_' + id);
 

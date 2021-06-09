@@ -47,7 +47,7 @@ if (isset($_SESSION['user'])) {
                 <p class="card-text">' . $result['description'] . '</p><div class="comment_area scroll overflow-auto" id="comment_area_'.$result['post_id'].'">';
 
                 $output .= '</div></div>
-                <form action="#" class="comment_form" id="comment_form_' . $result['post_id'] . '">
+                <form class="comment_form" id="comment_form_' . $result['post_id'] . '">
                 <input type="hidden" class="post_id" name="post_id" value="'.$result['post_id'].'">
                 <input type="hidden" id="comment_ids_'.$result['post_id'].'" name="comment_ids" value="">
                 <input type="text" class="form-control comment" placeholder="Comment" name="comment">
