@@ -44,7 +44,26 @@ if (isset($_SESSION['user'])) {
                 <div class="card-body">
                 <h3 class="card-title font-weight-bold">' . $result['title'] . '</h3>
                 <label>@' . $result['username'] . '</label>
-                <p class="card-text">' . $result['description'] . '</p><div class="comment_area scroll overflow-auto" id="comment_area_'.$result['post_id'].'">';
+                <p class="card-text">' . $result['description'] . '</p>';
+
+                $tag_output = "";
+                $stmt = $db->prepare("SELECT 
+                                                posts.post_id,
+                                                tags.tag_id,
+                                                tags.text
+                                            FROM posts 
+                                            LEFT JOIN post_tag ON posts.post_id = post_tag.post_id
+                                            RIGHT JOIN tags ON tags.tag_id = post_tag.tag_id
+                                            WHERE post_tag.post_id = :post_id");
+                $r = $stmt->execute(array(":post_id"=>$result['post_id']));
+                $tag_result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                while($tag_result){
+                    $tag_output .= "#".$tag_result['text']." ";
+                    $tag_result = $stmt->fetch(PDO::FETCH_ASSOC);
+                }
+
+                $output .= '<p class="card-text">' . $tag_output . '</p><div class="comment_area scroll overflow-auto" id="comment_area_'.$result['post_id'].'">';
 
                 $output .= '</div></div>
                 <form class="comment_form" id="comment_form_' . $result['post_id'] . '">
