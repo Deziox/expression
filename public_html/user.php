@@ -68,11 +68,11 @@ if (!isset($_SESSION['user'])) {
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="toast-body">
+    <div class="toast-body" id="notification-body">
     </div>
 </div>
-<!-- Header  -->
 
+<!-- Header  -->
 <!-- <header>
     <div class="overlay"></div>
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
@@ -169,6 +169,7 @@ if (!isset($_SESSION['user'])) {
                             <input type="hidden" name="sender_id" id="sender_id" value="<?php echo $_SESSION['user']['uid']; ?>">
                             <input type="hidden" name="receiver_id" id="receiver_id" value="">
                             <input type="hidden" id="message_ids" name="message_ids" value="">
+                            <input type="hidden" name="read_messages" id="read_messages" value="">
                             <div class="form-group">
                                 <label for="usermessage">Message: </label>
                                 <input type="text" class="form-control chat-input-field" name="usermessage"
@@ -212,6 +213,7 @@ if (!isset($_SESSION['user'])) {
 <script type="text/javascript" src="scripts/list-posts.js"></script>
 <script type="text/javascript" src="scripts/comment.js"></script>
 <script type="text/javascript" src="scripts/chat.js"></script>
+<script type="text/javascript" src="scripts/notification.js"></script>
 <script>
     function sendComment(id) {
         var form = document.getElementById('comment_form_' + id);
@@ -235,13 +237,58 @@ if (!isset($_SESSION['user'])) {
     }
 </script>
 <script>
-    $('.toast').toast('show');
     $(function () {
         $(document).scroll(function () {
             var $nav = $("#mainNavbar");
             $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height())
         });
     });
+</script>
+<script>
+    let unread = [];
+    setInterval(()=>{
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "scripts/chat_notification.php", true);
+        xhr.onload = () => {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    let data = xhr.response;
+                    if (data == "empty") {
+                        console.log("no recent messages");
+                    } else if (data == "nosesh") {
+                    } else {
+                        let notif_toast = document.getElementsByClassName("show")
+                        if (notif_toast.length < 1) {
+                            var i;
+                            let unread_users = data.split(",");
+                            let count = 0;
+                            for (i = 0; i < unread_users.length; i++) {
+                                if(unread.indexOf(unread_users[i]) < 0){
+                                    unread.push(unread_users[i]);
+                                    count++;
+                                }
+                            }
+                            if(count > 0) {
+                                var notif_text = "<h3>New message(s) from ";
+
+                                for (i = 0; i < unread.length; i++) {
+                                    notif_text += "@" + unread_users[i]
+                                    if (i != unread_users.length - 1) notif_text += ", "
+                                }
+                                notif_text += "</h3>";
+                                document.querySelector("#notification-body").innerHTML = notif_text;
+                                $('.toast').toast('show');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        let formData = new FormData(chatForm);
+        xhr.send(formData);
+    },2000);
 </script>
 </body>
 

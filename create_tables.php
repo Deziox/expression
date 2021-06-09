@@ -49,6 +49,7 @@ try{
 //                receiver_id int(11),
 //                text varchar(500) NOT NULL,
 //                send_date DATETIME NOT NULL,
+//                read_message BIT(1) NOT NULL DEFAULT 0,
 //                FOREIGN KEY (sender_id) REFERENCES users(userid),
 //                FOREIGN KEY (receiver_id) REFERENCES users(userid)
 //            );"

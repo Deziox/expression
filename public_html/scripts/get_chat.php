@@ -23,10 +23,15 @@ if (isset($_SESSION['user'])) {
             ":receiver_id"=>$_POST['receiver_id'],));
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
+        $unread_messages = array();
+
         if(!$result){
             $output = "empty";
         }else{
             while($result){
+                if($result['read_message'] == 0 && $result['receiver_id'] == $_SESSION['user']['uid']){
+                    array_push($unread_messages,$result['message_id']);
+                }
                 if(!in_array($result['message_id'],$message_ids)){
                     if($result['sender_id'] === $_POST['sender_id']){
                         $output = '<div class="d-flex flex-row p-3">
@@ -46,6 +51,14 @@ if (isset($_SESSION['user'])) {
                     }
                 }
                 $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            }
+
+            //read unread
+            foreach($unread_messages as &$unread){
+                $stmt = $db->prepare("UPDATE messages 
+                                    SET read_message = 1
+                                    WHERE message_id = :message_id");
+                $stmt->execute(array(":message_id" => $unread));
             }
         }
     }catch(PDOException $e){

@@ -87,5 +87,3 @@ setInterval(()=>{
         xhr.send(formData);
     }
 },2000);
-
-
