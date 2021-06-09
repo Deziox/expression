@@ -185,6 +185,28 @@ if (!isset($_SESSION['user'])) {
 <script type="text/javascript" src="scripts/list-posts.js"></script>
 <script type="text/javascript" src="scripts/comment.js"></script>
 <script>
+    function sendComment(id){
+        var form = document.getElementById('comment_form_' + id);
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST","scripts/comment.php",true);
+        xhr.onload = () => {
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                    let data = xhr.response;
+                    if(data == "empty"){
+                        console.log("empty message");
+                    }else if(data == "nosesh"){
+                    }else{
+                    }
+                }
+            }
+        }
+        let formData = new FormData(form);
+        xhr.send(formData);
+    }
+</script>
+<script>
     $(function () {
         $(document).scroll(function () {
             var $nav = $("#mainNavbar");
