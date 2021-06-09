@@ -34,8 +34,8 @@ if (!isset($_SESSION['user'])) {
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end mx-1" id="navLinks">
-        <form class="form-inline my-2 my-lg-0 post-search-form">
-            <input class="form-control mr-sm-2" type="search" id="tag" name="tag" placeholder="#" aria-label="Search">
+        <form action="scripts/get_posts.php" method="get" class="form-inline my-2 my-lg-0 post-search-form">
+            <input class="form-control mr-sm-2" type="text" name="tag" placeholder="#" aria-label="Search">
             <button type="button" class="btn btn-outline-success my-2 my-sm-0" id="post-search-button">Go</button>
         </form>
         <!-- Trigger NEW POST modal -->
