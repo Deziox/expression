@@ -42,3 +42,7 @@ setInterval(()=>{
     let formData = new FormData(chatForm);
     xhr.send(formData);
 },2000);
+
+setInterval(()=>{
+    unread = []
+},600555);
