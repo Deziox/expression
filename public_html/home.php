@@ -31,6 +31,9 @@
             <input class="form-control mr-sm-2" type="search" id="tag" name="tag" placeholder="#" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go</button>
         </form>
+        <?php
+            echo $_GET["tag"];
+        ?>
         <!-- Trigger NEW POST modal -->
         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modelId">
             Create a New Post
