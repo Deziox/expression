@@ -13,6 +13,8 @@ session_start();
 if (isset($_SESSION['user'])) {
     include_once "../../config.php";
     $output = "";
+    console.log($_SESSION['tag']);
+    echo ($_SESSION['tag']);
     try {
         $db = new PDO("mysql:host=$cleardb_server;dbname=$cleardb_db", $cleardb_username, $cleardb_password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
