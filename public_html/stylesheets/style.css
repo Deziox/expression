@@ -190,4 +190,6 @@
     overflow-x: auto;
     overflow-y: auto;
     text-align:justify;
+    display: flex;
+    flex-direction: column-reverse;
   }

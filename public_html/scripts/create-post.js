@@ -9,7 +9,7 @@ document.getElementById("post").onclick = () =>{
                 let data = xhr.response;
                 console.log(data);
                 if(data == "err_title"){
-                    console.log("empty message");
+
                 }else if(data == "err_file"){
 
                 }else if(data == "err_filetype"){

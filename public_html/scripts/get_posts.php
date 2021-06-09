@@ -25,12 +25,13 @@ if (isset($_SESSION['user'])) {
         $r = $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        $img_result = $s3->listObjects(array('Bucket' => $bucket));
-
+        $checked_posts = "";
         if (!$result) {
             $output = "empty";
         } else {
             while ($result) {
+                $checked_posts .= "'" . $result['post_id'] . "'";
+
                 $cmd = $s3->getCommand('GetObject', [
                     'Bucket' => $bucket,
                     'Key' => "images/" . $result['image']
@@ -43,45 +44,34 @@ if (isset($_SESSION['user'])) {
                 <div class="card-body">
                 <h3 class="card-title font-weight-bold">' . $result['title'] . '</h3>
                 <label>@' . $result['username'] . '</label>
-                <div>
-                    <input type="text" readonly class="form-control-plaintext" id="readcomments"
-                    value="#sometag">
-                </div>
-                <p class="card-text">' . $result['description'] . '</p>';
+                <p class="card-text">' . $result['description'] . '</p><div class="comment_area scroll overflow-auto" id="comment_area_'.$result['post_id'].'">';
 
-                //display all comments
-                $output .= '<div class="scroll overflow-auto"><form>
-                <div class="form-group row">
-                    <label for="readcomments" class="col-form-label"><h3 style="margin-left: 12px;">@someuser</h3>
-                    </label>
-
-                    <div class="col-sm-7">
-                        <div class="col-form-label">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit blandit augue, quis vehicula urna hendrerit in. Nam congue libero quis augue facilisis sagittis. Sed egestas libero sit amet metus imperdiet efficitur. Nullam fermentum, sem id eleifend facilisis, eros sapien porttitor augue, vitae gravida lorem turpis quis nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla a augue vitae massa facilisis euismod. Aliquam vitae pretium lorem. Nullam egestas velit et massa interdum, in mattis justo iaculis. Cras lacinia, diam id rhoncus suscipit, arcu ligula porttitor justo, at vestibulum mi diam id libero. Duis ac libero rhoncus, vehicula nulla id, posuere risus. Nulla lectus orci, ultrices quis maximus at, ornare at urna. Vivamus nec finibus mi. Nam venenatis dignissim mauris. Nam tristique aliquam mauris, accumsan feugiat nisl molestie a. Maecenas lorem quam, pellentesque id sagittis nec, iaculis vel erat. Sed in mollis purus.</div>
-                    </div>
-                    <div class="col-sm">
-                    <input type="text" readonly class="form-control-plaintext" id="readcomments"
-                               value="2:20 pm 06.07.21">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="readcomments" class="col-form-label"><h3 style="margin-left: 10px;">@someuser</h3>
-                    </label>
-
-                </div>
-                </div>';
-
-                $output .= '</div>
-                <input type="text" class="form-control" placeholder="Comment">
+                $output .= '</div></div>
+                <form action="#" class="comment_form" id="comment_form_' . $result['post_id'] . '">
+                <input type="hidden" class="post_id" name="post_id" value="'.$result['post_id'].'">
+                <input type="hidden" id="comment_ids_'.$result['post_id'].'" name="comment_ids" value="">
+                <input type="text" class="form-control comment" placeholder="Comment" name="comment">
                 <div class="container">
-                <button type="submit btn-primary">Post</button>
+                <button type="button" class="comment_post btn btn-primary" name="post" id="post_' . $result['post_id'] . '" onclick="sendComment('.$result['post_id'].')">Post</button>
                 </div>
                 </form>
                 <div class="card-footer">
                 <small class="text-muted">Last updated 3 mins ago</small>
                 </div>
                 </div>
-                <br>';
+                <br><br>';
+
+                $stmt = $db->prepare("SELECT *
+                                    FROM posts
+                                    INNER JOIN users
+                                    ON posts.userid = users.userid
+                                    WHERE post_id NOT IN (" . $checked_posts . ")
+                                    ORDER BY post_time DESC");
+                $r = $stmt->execute();
                 $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                if ($result) {
+                    $checked_posts .= ",";
+                }
             }
         }
     } catch (Exception $e) {

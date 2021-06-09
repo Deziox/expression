@@ -183,6 +183,7 @@ if (!isset($_SESSION['user'])) {
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="scripts/create-post.js"></script>
 <script type="text/javascript" src="scripts/list-posts.js"></script>
+<script type="text/javascript" src="scripts/comment.js"></script>
 <script>
     $(function () {
         $(document).scroll(function () {
@@ -190,7 +191,6 @@ if (!isset($_SESSION['user'])) {
             $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height())
         });
     });
-
 </script>
 </body>
 
