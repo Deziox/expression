@@ -162,7 +162,7 @@ if (!isset($_SESSION['user'])) {
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="overflow-auto chat-box" style="height: 40vh; overflow-y: auto;">
+                    <div class="overflow-auto chat-box scroll" style="height: 40vh; overflow-y: auto;">
                     </div>
                     <div class="container-fluid">
                         <form action="#" class="chat-typing-area" autocomplete="off">

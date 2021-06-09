@@ -78,7 +78,7 @@ setInterval(()=>{
                     } else if (data == "nosesh") {
 
                     } else {
-                        chatBox.innerHTML += data;
+                        chatBox.innerHTML = data + chatBox.innerHTML;
                     }
                 }
             }
@@ -87,3 +87,5 @@ setInterval(()=>{
         xhr.send(formData);
     }
 },2000);
+
+

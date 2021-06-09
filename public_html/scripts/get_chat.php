@@ -18,7 +18,7 @@ if (isset($_SESSION['user'])) {
 
         $stmt = $db->prepare("SELECT * FROM messages 
                                     WHERE (sender_id = :sender_id AND receiver_id = :receiver_id) OR (sender_id = :receiver_id AND receiver_id = :sender_id)
-                                    ORDER BY message_id DESC");
+                                    ORDER BY message_id ASC");
         $stmt->execute(array(":sender_id" => $_POST['sender_id'],
             ":receiver_id"=>$_POST['receiver_id'],));
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
