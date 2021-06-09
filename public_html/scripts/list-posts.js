@@ -44,7 +44,7 @@ document.getElementById("post-search-button").onclick = () => {
                             }
 
                             let xhr = new XMLHttpRequest();
-                            xhr.open("POST","scripts/get_comments.php",true);
+                            //xhr.open("POST","scripts/get_comments.php",true);
                             xhr.onload = () => {
                                 if(xhr.readyState === XMLHttpRequest.DONE){
                                     if(xhr.status === 200){
@@ -114,7 +114,7 @@ window.onload = function(){
                             }
 
                             let xhr = new XMLHttpRequest();
-                            xhr.open("POST","scripts/get_comments.php",true);
+                            //xhr.open("POST","scripts/get_comments.php",true);
                             xhr.onload = () => {
                                 if(xhr.readyState === XMLHttpRequest.DONE){
                                     if(xhr.status === 200){

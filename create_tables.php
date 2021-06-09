@@ -72,7 +72,6 @@ try{
 
     $stmt = $db->prepare(
         "DROP TABLE IF EXISTS post_tag;
-            
             DROP TABLE IF EXISTS posts;
             CREATE TABLE posts (
                 post_id int(11) AUTO_INCREMENT NOT NULL PRIMARY KEY,
