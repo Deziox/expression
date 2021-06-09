@@ -27,7 +27,7 @@ if (isset($_SESSION['user'])) {
         }else{
             while($result){
                 if(!in_array($result['username'],$unread_messages)) {
-                    array_push($unread_messages, $result['username']);
+                    array_push($unread_messages, $result['username'].":".$result['message_id']);
                 }
                 $result = $stmt->fetch(PDO::FETCH_ASSOC);
             }

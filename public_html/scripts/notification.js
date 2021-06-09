@@ -23,12 +23,20 @@ setInterval(()=>{
                                 count++;
                             }
                         }
+                        //username:<id>
                         if(count > 0) {
                             var notif_text = "<h3>New message(s) from ";
 
+                            var uu = []
                             for (i = 0; i < unread.length; i++) {
-                                notif_text += "@" + unread_users[i]
-                                if (i != unread_users.length - 1) notif_text += ", "
+                                var unreadmessage = unread_users[i].split(":")
+                                var username = unreadmessage[0];
+
+                                if(uu.indexOf(username) < 0) {
+                                    notif_text += "@" + unread_users[i].split(":")[0];
+                                    if (i != unread_users.length - 1) notif_text += ", ";
+                                    uu.push(username);
+                                }
                             }
                             notif_text += "</h3>";
                             document.querySelector("#notification-body").innerHTML = notif_text;
