@@ -38,11 +38,6 @@ if (!isset($_SESSION['user'])) {
             <input class="form-control mr-sm-2" type="search" id="tag" name="tag" placeholder="#" aria-label="Search">
             <button type="button" class="btn btn-outline-success my-2 my-sm-0" id="post-search-button">Go</button>
         </form>
-        <?php
-            session_start();
-            $_SESSION['tag'] = $_GET['tag'];
-            console.log($_GET['tag']);
-        ?>
         <!-- Trigger NEW POST modal -->
         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modelId">
             Create a New Post
