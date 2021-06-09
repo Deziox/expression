@@ -50,6 +50,14 @@ document.getElementById("chat-send").onclick = () =>{
     xhr.send(formData);
 }
 
+document.getElementById("close-chat").onclick = () => {
+    setTimeout(function(){
+        chatBox.innerHTML = "";
+        document.getElementById("message_ids").value = "";
+        document.getElementById("receiver_id").value = "";
+    },1000);
+}
+
 setInterval(()=>{
     if(chatForm.querySelector("#receiver_id").value != "") {
         var message_id_array = document.getElementsByClassName("message_id")

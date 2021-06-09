@@ -1,4 +1,5 @@
 let unread = [];
+
 setInterval(()=>{
 
     let xhr = new XMLHttpRequest();
@@ -46,3 +47,4 @@ setInterval(()=>{
 setInterval(()=>{
     unread = []
 },600555);
+

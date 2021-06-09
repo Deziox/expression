@@ -157,7 +157,7 @@ if (!isset($_SESSION['user'])) {
                             </div>
                         </div>
                     </form>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" id="close-chat" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
