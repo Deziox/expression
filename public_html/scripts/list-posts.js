@@ -23,7 +23,7 @@ document.getElementById("post-search-button").onclick = () => {
 
                     let divs = document.getElementsByClassName("comment_area");
                     let div_array = [].slice.call(divs)
-                    div_array.forEach(function callbackFn(element){
+ /*                   div_array.forEach(function callbackFn(element){
 
                         setInterval(()=>{
                             var post_id = element.id.split("_")[2];
@@ -43,7 +43,7 @@ document.getElementById("post-search-button").onclick = () => {
                                 document.getElementById("comment_ids_" + post_id).value = output;
                             }
 
-/*                            let xhr = new XMLHttpRequest();
+/!*                            let xhr = new XMLHttpRequest();
                             //xhr.open("POST","scripts/get_comments.php",true);
                             xhr.onload = () => {
                                 if(xhr.readyState === XMLHttpRequest.DONE){
@@ -56,12 +56,12 @@ document.getElementById("post-search-button").onclick = () => {
                                         }
                                     }
                                 }
-                            }*/
+                            }*!/
                             let formData = new FormData(form);
                             xhr.send(formData);
 
                         },Math.floor(Math.random() * (4000 - 2000 + 1) + 2000));
-                    });
+                    });*/
 
 
                 }
@@ -93,7 +93,7 @@ window.onload = function(){
 
                     let divs = document.getElementsByClassName("comment_area");
                     let div_array = [].slice.call(divs)
-                    div_array.forEach(function callbackFn(element){
+/*                    div_array.forEach(function callbackFn(element){
 
                         interval_array.push(setInterval(()=>{
                             var post_id = element.id.split("_")[2];
@@ -113,9 +113,9 @@ window.onload = function(){
                                 document.getElementById("comment_ids_" + post_id).value = output;
                             }
 
-/*                            let xhr = new XMLHttpRequest();
-                            xhr.open("POST","scripts/get_comments.php",true);
-                            xhr.onload = () => {
+/!*                            let xhr = new XMLHttpRequest();
+                              xhr.open("POST","scripts/get_comments.php",true);
+                              xhr.onload = () => {
                                 if(xhr.readyState === XMLHttpRequest.DONE){
                                     if(xhr.status === 200){
                                         let data = xhr.response;
@@ -126,13 +126,13 @@ window.onload = function(){
                                         }
                                     }
                                 }
-                            }*/
+                            }*!/
                             let formData = new FormData(form);
                             xhr.send(formData);
 
                         },Math.floor(Math.random() * (4000 - 2000 + 1) + 2000)));
                     });
-                }
+ */               }
             }
         }
     }
