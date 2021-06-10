@@ -9,6 +9,6 @@
     "heroku/heroku-buildpack-php": "*"
   },
   "scripts": {
-    "post-install-cmd": "cat /etc/os-release"
+    "post-install-cmd": "pwd"
   }
 }
