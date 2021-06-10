@@ -192,8 +192,9 @@ if (isset($_SESSION['user'])) {
                                         ON tags.tag_id = post_tag.tag_id
                                         INNER JOIN users
                                         ON users.userid = posts.userid
-                                        WHERE tags.text = ? AND post_id NOT IN (" . $checked_posts . ")
+                                        WHERE tags.text = ? AND posts.post_id NOT IN (" . $checked_posts . ")
                                         ORDER BY post_time DESC");
+
                     $r = $stmt->execute([$tag]);
                     $result = $stmt->fetch(PDO::FETCH_ASSOC);
                     if ($result) {
