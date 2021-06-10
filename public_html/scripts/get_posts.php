@@ -13,7 +13,7 @@ session_start();
 if (isset($_SESSION['user'])) {
     include_once "../../config.php";
     $output = "";
-    $tag = $_GET['tag'];
+    $tag = $_POST['tag'];
     if(empty($tag)) {
         try {
             $db = new PDO("mysql:host=$cleardb_server;dbname=$cleardb_db", $cleardb_username, $cleardb_password);
