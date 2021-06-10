@@ -9,6 +9,6 @@
     "heroku/heroku-buildpack-php": "*"
   },
   "scripts": {
-    "post-install-cmd": "pwd"
+    "post-install-cmd": "python --version"
   }
 }
