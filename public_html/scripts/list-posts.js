@@ -56,7 +56,7 @@ document.getElementById("post-search-button").onclick = () => {
                                         }
                                     }
                                 }
-                            }*!/
+                            }
                             let formData = new FormData(form);
                             xhr.send(formData);
 
