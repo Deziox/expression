@@ -109,12 +109,15 @@ if (isset($_SESSION['user'])) {
                                                posts.title,
                                                posts.description,
                                                posts.image,
-                                               posts.post_time
+                                               posts.post_time,
+                                               users.username
                                         FROM posts
                                         INNER JOIN post_tag  
                                         ON posts.post_id = post_tag.post_id 
                                         INNER JOIN tags 
                                         ON tags.tag_id = post_tag.tag_id
+                                        INNER JOIN users
+                                        ON users.userid = posts.userid
                                         WHERE tags.text = ?
                                         ORDER BY post_time DESC");
 
