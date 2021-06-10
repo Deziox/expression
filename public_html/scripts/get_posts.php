@@ -178,13 +178,23 @@ if (isset($_SESSION['user'])) {
                     </div>
                     </div>
                     <br><br>';
-                    $stmt = $db->prepare("SELECT *
+                    $stmt = $db->prepare("SELECT posts.post_id,
+                                               posts.userid,
+                                               posts.title,
+                                               posts.description,
+                                               posts.image,
+                                               posts.post_time,
+                                               users.username
                                         FROM posts
+                                        INNER JOIN post_tag  
+                                        ON posts.post_id = post_tag.post_id 
+                                        INNER JOIN tags 
+                                        ON tags.tag_id = post_tag.tag_id
                                         INNER JOIN users
-                                        ON posts.userid = users.userid
-                                        WHERE post_id NOT IN (" . $checked_posts . ")
+                                        ON users.userid = posts.userid
+                                        WHERE tags.text = ? AND post_id NOT IN (" . $checked_posts . ")
                                         ORDER BY post_time DESC");
-                    $r = $stmt->execute();
+                    $r = $stmt->execute([$tag]);
                     $result = $stmt->fetch(PDO::FETCH_ASSOC);
                     if ($result) {
                         $checked_posts .= ",";
