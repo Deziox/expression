@@ -16,7 +16,7 @@
 if(!isset($_GET['code'])){
     $auth_query = array(
         'client_id' => '6caca287eab0474eacb78c98af31e491',
-        'redirect_uri' => 'http://localhost:63342/cs490/public_html/scripts/spotify-recommendation.php',
+        'redirect_uri' => 'https://socialnetworking490-dev.herokuapp.com/scripts/spotify-recommendation.php',
         'response_type' => 'code'
     );
     $auth_url = 'https://accounts.spotify.com/authorize?'.http_build_query($auth_query);
