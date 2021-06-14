@@ -13,17 +13,20 @@
  *      (This was done with pretrained Word2Vec vectors.)
  */
 session_start();
-if(!isset($_GET['tags'])){
+if(!isset($_GET['tags']) && !isset($_SESSION['spotags'])){
     echo "no_tags";
 }else {
+    if(!isset($_SESSION['spotags'])) {
+        $_SESSION['spotags'] = $_GET['tags'];
+    }
     if (!isset($_SESSION['user'])) {
         header('Location: /login.php');
     } else {
         if (!isset($_SESSION['user']['code'])) {
             if (!isset($_GET['code'])) {
                 $auth_query = array(
-                    'client_id' => '6caca287eab0474eacb78c98af31e491',
-                    'redirect_uri' => 'https://socialnetworking490-dev.herokuapp.com/scripts/spotify-recommendation.php?tags='.$_GET['tags'],
+                    'client_id' => getenv("SPOTIFY_CLIENT_ID"),
+                    'redirect_uri' => 'https://socialnetworking490-dev.herokuapp.com/scripts/spotify-recommendation.php',
                     'response_type' => 'code'
                 );
                 $auth_url = 'https://accounts.spotify.com/authorize?' . http_build_query($auth_query);
@@ -72,7 +75,7 @@ if(!isset($_GET['tags'])){
 
             $curl = curl_init();
             curl_setopt($curl, CURLOPT_POST, 1);
-            $hashtags = $_GET['tags'];
+            $hashtags = $_SESSION['spotags'];
             $data = json_encode(array("hashtags" => $hashtags));
 
             curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
@@ -108,6 +111,7 @@ if(!isset($_GET['tags'])){
 
                 echo '<iframe src="https://open.spotify.com/embed/' . $track_uri[1] . "/" . $track_uri[2] . '" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br><br>';
             }
+            unset($_SESSION['spotags']);
         }
     }
 }
