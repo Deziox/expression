@@ -15,7 +15,7 @@
 
 function get_recommendation($tags)
 {
-    if (!empty($tags)) {
+    if (empty($tags)) {
         return "no_tags";
     } else {
         if (!isset($_SESSION['user'])) {
