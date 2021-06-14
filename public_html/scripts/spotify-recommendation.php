@@ -50,7 +50,7 @@ if(!isset($_SESSION['user'])){
         curl_close($curl);
         $_SESSION['user']['refresh_code'] = $result['refresh_token'];
         $access_token = $result['access_token'];
-        header("Location: /user.php?access_token=".$access_token);
+        //header("Location: /user.php?access_token=".$access_token."_yurmum&refresh_token=".$_SESSION['user']['refresh_code']);
     }else{
         echo "test2";
         $curl = curl_init();
@@ -89,6 +89,7 @@ if(!isset($_SESSION['user'])){
     }
     echo $access_token;
     echo "test";
+    echo base64_encode(getenv("SPOTIFY_CLIENT_ID").":".getenv("SPOTIFY_CLIENT_SECRET"));
 }
 
 
