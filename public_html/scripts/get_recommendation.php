@@ -68,7 +68,7 @@ function get_recommendation($tags)
             $recommendations = json_decode(curl_exec($curl), true);
             curl_close($curl);
             $tracks = $recommendations['tracks'];
-            $rec = $tracks[array_rand($tracks)];
+            $rec = $tracks[array_rand($tracks)[0]];
             $track_uri = explode(":", $rec['uri']);
             $ret_val .= '<iframe src="https://open.spotify.com/embed/' . $track_uri[1] . "/" . $track_uri[2] . '" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br><br>';
             return $ret_val;
