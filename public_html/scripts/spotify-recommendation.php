@@ -34,7 +34,6 @@ if(!isset($_SESSION['user'])){
 
     $access_token = "access token";
     if (!isset($_SESSION['user']['refresh_code'])){
-        echo "test";
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_POST, 1);
         $data = array("grant_type" => 'authorization_code',
@@ -51,9 +50,7 @@ if(!isset($_SESSION['user'])){
         curl_close($curl);
         $_SESSION['user']['refresh_code'] = $result['refresh_token'];
         $access_token = $result['access_token'];
-        //header("Location: /user.php?access_token=".$access_token."_yurmum&refresh_token=".$_SESSION['user']['refresh_code']);
     }else{
-        echo "test2";
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_POST, 1);
         $data = array("grant_type" => 'refresh_token',
@@ -70,13 +67,11 @@ if(!isset($_SESSION['user'])){
         $access_token = $result['access_token'];
     }
 
-
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_POST, 1);
     $hashtags = "memes,love,photography,photo,art";
     $data = json_encode(array("hashtags" => $hashtags));
 
-//echo $data;
     curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
     curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
     curl_setopt($curl, CURLOPT_URL, 'http://18.207.233.207/api/spotify-genre-recommendation');
@@ -85,13 +80,28 @@ if(!isset($_SESSION['user'])){
     $result = json_decode(curl_exec($curl), true);
     curl_close($curl);
     $genres = explode(",", $result['recommendation']['genres']);
+
     echo "<p style='margin-left: 12px;'>Top 5 genre recommendations for the following hashtags (" . $hashtags . ")</p>";
     foreach ($genres as &$genre) {
         echo "<p style='margin-left: 12px;'>" . $genre . "</p>";
     }
-    echo $access_token;
-    echo "test";
-    echo base64_encode(getenv("SPOTIFY_CLIENT_ID").":".getenv("SPOTIFY_CLIENT_SECRET"));
+    $seed_genre = implode("%2C",$genres);
+
+    $curl = curl_init();
+    curl_setopt($curl,CURLOPT_URL,'https://api.spotify.com/v1/recommendations?limit=10&seed_genres='.$seed_genre);
+    curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($curl,CURLOPT_HTTPHEADER, array(
+            'Accept: application/json',
+            'Content-Type: application/json',
+            'Authorization: Bearer '.$access_token
+    ));
+    $recommendations = json_decode(curl_exec($curl), true);
+    curl_close($curl);
+    $tracks = $recommendations['tracks'];
+    echo "<p style='margin-left: 12px;'>Top 10 song recommendations for the following hashtags (" . $hashtags . ")</p>";
+    foreach ($tracks as &$track) {
+        echo "<a style='margin-left: 12px;' href='".$track['href']."'>" . $track['name'] . "</a>";
+    }
 }
 
 
