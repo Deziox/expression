@@ -100,7 +100,7 @@ if(!isset($_SESSION['user'])){
     $tracks = $recommendations['tracks'];
     echo "<p style='margin-left: 12px;'>Top 10 song recommendations for the following hashtags (" . $hashtags . ")</p>";
     foreach ($tracks as &$track) {
-        echo "<a style='margin-left: 12px;' href='".$track['href']."'>" . $track['name'] . "</a>";
+        echo "<a style='margin-left: 12px;' href='".$track['external_urls']['spotify']."'>" . $track['name'] . "</a>";
     }
 }
 
