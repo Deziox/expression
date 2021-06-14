@@ -72,6 +72,11 @@
       color: rgb(41, 114, 182)
   }
 
+  /* login/register jumbotron */
+  .jumbotron {
+    background-image: linear-gradient(to bottom right,rgb(27,65,86),rgb(244,132,13));
+  }
+
   .circle {
     clip-path: circle(44% at 50% 50%);
   }
