@@ -62,6 +62,9 @@
 
     background-image: url(/public_html/images/userbackground.png);
   }
+  .login {
+    background-image: url(/public_html/images/userbackground.png);
+  }
   .mainNavbar a:hover {
       color: rgb(41, 114, 182);
   }
@@ -70,6 +73,13 @@
   }
   #regNavbar a:hover {
       color: rgb(41, 114, 182)
+  }
+
+  /* login/register jumbotron */
+  .jumbotron {
+    background-image: linear-gradient(to bottom right,rgb(27,65,86),rgb(244,132,13));
+    opacity: 0.8;
+    
   }
 
   .circle {

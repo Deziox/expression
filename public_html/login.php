@@ -17,7 +17,7 @@ include('../login/login_handler.php');
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
-<body>
+<body class="login">
 
 <div class="container">
     <!-- navbar -->
@@ -38,19 +38,19 @@ include('../login/login_handler.php');
     <!-- Form -->
     <section class="container pt-5 justify-content-center mt-5">
         <div class="jumbotron pt-5">
-            <div class="align-self-center mb-2">Enter Login:</div>
-
-            <form action="login.php" method="post">
+            <img class="col-md-4" src="/public_html/images/musicpainting.jpg" alt="">         
+            <form class="cold-md-8" action="login.php" method="post">
+                <div class="align-self-center mb-2"><h2>Enter Login:</h2></div>
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="Email">E-mail</label>
+                        <label for="Email"><h2>E-mail</h2></label>
                         <?php echo "<div class=\"error\">".$errors['email']."</div>";?>
                         <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="password">Password</label>
+                        <label for="password"><h2>Password</h2></label>
                         <?php echo "<div class=\"error\">".$errors['password']."</div>";?>
                         <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                     </div>
