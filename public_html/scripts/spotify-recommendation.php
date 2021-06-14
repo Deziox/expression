@@ -12,44 +12,45 @@
  *      each of Spotify's genre categories (i.e. 'jazz', 'piano').
  *      (This was done with pretrained Word2Vec vectors.)
  */
+session_start();
 
 if(!isset($_SESSION['user'])){
     header('Location: /login.php');
-}
-if(!isset($_SESSION['user']['code'])){
-    if(!isset($_GET['code'])){
-        $auth_query = array(
-            'client_id' => '6caca287eab0474eacb78c98af31e491',
-            'redirect_uri' => 'https://socialnetworking490-dev.herokuapp.com/scripts/spotify-recommendation.php',
-            'response_type' => 'code'
-        );
-        $auth_url = 'https://accounts.spotify.com/authorize?'.http_build_query($auth_query);
-        echo $auth_url;
-        header('Location: '.$auth_url);
-    }else{
-        $_SESSION['user']['code'] = $_GET['code'];
+}else {
+    if (!isset($_SESSION['user']['code'])) {
+        if (!isset($_GET['code'])) {
+            $auth_query = array(
+                'client_id' => '6caca287eab0474eacb78c98af31e491',
+                'redirect_uri' => 'https://socialnetworking490-dev.herokuapp.com/scripts/spotify-recommendation.php',
+                'response_type' => 'code'
+            );
+            $auth_url = 'https://accounts.spotify.com/authorize?' . http_build_query($auth_query);
+            echo $auth_url;
+            header('Location: ' . $auth_url);
+        } else {
+            $_SESSION['user']['code'] = $_GET['code'];
+        }
     }
-}
 
-$curl = curl_init();
-curl_setopt($curl,CURLOPT_POST,1);
-$hashtags = "memes,love,photography,photo,art";
-$data = json_encode(array("hashtags"=>$hashtags));
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_POST, 1);
+    $hashtags = "memes,love,photography,photo,art";
+    $data = json_encode(array("hashtags" => $hashtags));
 
 //echo $data;
-curl_setopt($curl,CURLOPT_POSTFIELDS,$data);
-curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-curl_setopt($curl, CURLOPT_URL,'http://18.207.233.207/api/spotify-genre-recommendation');
-curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+    curl_setopt($curl, CURLOPT_URL, 'http://18.207.233.207/api/spotify-genre-recommendation');
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
-$result = json_decode(curl_exec($curl),true);
-curl_close($curl);
-$genres = explode(",",$result['recommendation']['genres']);
-echo "<p style='margin-left: 12px;'>Top 5 genre recommendations for the following hashtags (".$hashtags.")</p>";
-foreach($genres as &$genre){
-    echo "<p style='margin-left: 12px;'>".$genre."</p>";
+    $result = json_decode(curl_exec($curl), true);
+    curl_close($curl);
+    $genres = explode(",", $result['recommendation']['genres']);
+    echo "<p style='margin-left: 12px;'>Top 5 genre recommendations for the following hashtags (" . $hashtags . ")</p>";
+    foreach ($genres as &$genre) {
+        echo "<p style='margin-left: 12px;'>" . $genre . "</p>";
+    }
 }
-
 
 
 //curl_setopt($spotify_curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json',"Accept: application/json","Authorization: Bearer"));
