@@ -101,7 +101,9 @@ if(!isset($_SESSION['user'])){
     echo "<p style='margin-left: 12px;'>Top 10 song recommendations for the following hashtags (" . $hashtags . ")</p>";
     foreach ($tracks as &$track) {
         echo "<a style='margin-left: 12px;' href='".$track['external_urls']['spotify']."'>" . $track['name'] . "</a>";
-        echo '<iframe src="https://open.spotify.com/embed/album/'.explode(":",$track['uri'])[2].'" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br>';
+        $track_uri = explode(":",$track['uri']);
+
+        echo '<iframe src="https://open.spotify.com/embed/'.$track_uri[1]."/".$track_uri[2].'" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br>';
     }
 }
 
