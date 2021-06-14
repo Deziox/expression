@@ -13,29 +13,33 @@
  *      (This was done with pretrained Word2Vec vectors.)
  */
 
-if(!isset($_GET['code'])){
-    $auth_query = array(
-        'client_id' => '6caca287eab0474eacb78c98af31e491',
-        'redirect_uri' => 'https://socialnetworking490-dev.herokuapp.com/scripts/spotify-recommendation.php',
-        'response_type' => 'code'
-    );
-    $auth_url = 'https://accounts.spotify.com/authorize?'.http_build_query($auth_query);
-    echo $auth_url;
-    header('Location: '.$auth_url);
+if(!isset($_SESSION['user'])){
+    header('Location: /login.php');
 }
-
 if(!isset($_SESSION['user']['code'])){
-
+    if(!isset($_GET['code'])){
+        $auth_query = array(
+            'client_id' => '6caca287eab0474eacb78c98af31e491',
+            'redirect_uri' => 'https://socialnetworking490-dev.herokuapp.com/scripts/spotify-recommendation.php',
+            'response_type' => 'code'
+        );
+        $auth_url = 'https://accounts.spotify.com/authorize?'.http_build_query($auth_query);
+        echo $auth_url;
+        header('Location: '.$auth_url);
+    }else{
+        $_SESSION['user']['code'] = $_GET['code'];
+    }
 }
 
 $curl = curl_init();
 curl_setopt($curl,CURLOPT_POST,1);
 $hashtags = "memes,love,photography,photo,art";
 $data = json_encode(array("hashtags"=>$hashtags));
+
 //echo $data;
 curl_setopt($curl,CURLOPT_POSTFIELDS,$data);
 curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-curl_setopt($curl, CURLOPT_URL,'http://54.167.177.78/api/spotify-genre-recommendation');
+curl_setopt($curl, CURLOPT_URL,'http://18.207.233.207/api/spotify-genre-recommendation');
 curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
 
 $result = json_decode(curl_exec($curl),true);
@@ -45,6 +49,8 @@ echo "<p style='margin-left: 12px;'>Top 5 genre recommendations for the followin
 foreach($genres as &$genre){
     echo "<p style='margin-left: 12px;'>".$genre."</p>";
 }
+
+
 
 //curl_setopt($spotify_curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json',"Accept: application/json","Authorization: Bearer"));
 ?>
