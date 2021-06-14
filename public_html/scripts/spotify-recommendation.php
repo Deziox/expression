@@ -50,6 +50,7 @@ if(!isset($_SESSION['user'])){
         curl_close($curl);
         $_SESSION['user']['refresh_code'] = $result['refresh_token'];
         $access_token = $result['access_token'];
+        header("Location: /user.php?access_token=".$access_token);
     }else{
         echo "test2";
         $curl = curl_init();
