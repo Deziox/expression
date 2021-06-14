@@ -12,6 +12,7 @@ require("../../s3_config.php");
 session_start();
 if (isset($_SESSION['user'])) {
     include_once "../../config.php";
+    include("get_recommendation.php");
     $output = "";
     $tag = $_POST['tag'];
     if(empty($tag)) {
@@ -59,10 +60,15 @@ if (isset($_SESSION['user'])) {
                                                 WHERE post_tag.post_id = :post_id");
                     $r = $stmt->execute(array(":post_id" => $result['post_id']));
                     $tag_result = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $recommender_tags = "";
 
                     while ($tag_result) {
                         $tag_output .= "#" . $tag_result['text'] . " ";
+                        $recommender_tags .= $tag_result['text'];
                         $tag_result = $stmt->fetch(PDO::FETCH_ASSOC);
+                        if($tag_result){
+                            $recommender_tags .= ",";
+                        }
                     }
 
                     $output .= '<p class="card-text">' . $tag_output . '</p><div class="comment_area scroll overflow-auto" id="comment_area_' . $result['post_id'] . '">';
@@ -75,7 +81,15 @@ if (isset($_SESSION['user'])) {
                     <div class="container">
                     <button type="button" class="comment_post btn btn-primary" name="post" id="post_' . $result['post_id'] . '" onclick="sendComment(' . $result['post_id'] . ')">Post</button>
                     </div>
-                    </form>
+                    </form><div class="card-body text-center"><h4>Song Recommendation:</h4>';
+
+                    if(!isset($_SESSION['user']['refresh_code'])){
+                        $output .= '<a type="button" class="btn btn-success chat-send" id="chat-send" href="./scripts/spotify-login.php"><i class="fab fa-spotify"></i>  Log in to Spotify</a>';
+                    }else{
+                        $output .= get_recommendation($recommender_tags);
+                    }
+
+                    $output .= '</div>
                     <div class="card-footer">
                     <small class="text-muted">Last updated 3 mins ago</small>
                     </div>
