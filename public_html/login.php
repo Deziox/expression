@@ -29,7 +29,7 @@ include('../login/login_handler.php');
         <div class="collapse navbar-collapse justify-content-end" id="navLinks">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="register.php" class="nav-link"><h2>Register</h2></a>
+                    <a href="register.php" class="nav-link">Register</a>
                 </li>
             </ul>
         </div>
@@ -38,9 +38,9 @@ include('../login/login_handler.php');
     <!-- Form -->
     <section class="container pt-5 justify-content-center mt-5">
         <div class="jumbotron pt-5">
-            <div class="align-self-center mb-2"><h2>Enter Login:</h2></div>
-
-            <form action="login.php" method="post">
+            <img class="col-md-4" src="/public_html/images/musicpainting.jpg" alt="">         
+            <form class="cold-md-8" action="login.php" method="post">
+                <div class="align-self-center mb-2"><h2>Enter Login:</h2></div>
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="Email"><h2>E-mail</h2></label>
