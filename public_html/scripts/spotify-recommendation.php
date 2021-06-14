@@ -34,6 +34,7 @@ if(!isset($_SESSION['user'])){
 
     $access_token = "access token";
     if (!isset($_SESSION['user']['refresh_code'])){
+        echo "test";
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_POST, 1);
         $data = json_encode(array("grant_type" => 'authorization_code',
@@ -50,6 +51,7 @@ if(!isset($_SESSION['user'])){
         $_SESSION['user']['refresh_code'] = $result['refresh_token'];
         $access_token = $result['access_token'];
     }else{
+        echo "test2";
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_POST, 1);
         $data = json_encode(array("grant_type" => 'refresh_token',
@@ -85,6 +87,7 @@ if(!isset($_SESSION['user'])){
         echo "<p style='margin-left: 12px;'>" . $genre . "</p>";
     }
     echo $access_token;
+    echo "test";
 }
 
 
