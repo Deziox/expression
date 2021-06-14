@@ -32,6 +32,40 @@ if(!isset($_SESSION['user'])){
         }
     }
 
+    $access_token = "access token";
+    if (!isset($_SESSION['user']['refresh_code'])){
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_POST, 1);
+        $data = json_encode(array("grant_type" => 'authorization_code',
+                                    "code" => $_SESSION['user']['code'],
+                                    "redirect_uri"=>"https://socialnetworking490-dev.herokuapp.com/scripts/spotify-recommendation.php"));
+
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Basic '.base64_encode(getenv("SPOTIFY_CLIENT_ID").":".getenv("SPOTIFY_CLIENT_SECRET"))));
+        curl_setopt($curl, CURLOPT_URL, 'https://accounts.spotify.com/api/token');
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+        $result = json_decode(curl_exec($curl), true);
+        curl_close($curl);
+        $_SESSION['user']['refresh_code'] = $result['refresh_token'];
+        $access_token = $result['access_token'];
+    }else{
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_POST, 1);
+        $data = json_encode(array("grant_type" => 'refresh_token',
+            "refresh_token"=>$_SESSION['user']['refresh_code']));
+
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Basic '.base64_encode(getenv("SPOTIFY_CLIENT_ID").":".getenv("SPOTIFY_CLIENT_SECRET"))));
+        curl_setopt($curl, CURLOPT_URL, 'https://accounts.spotify.com/api/token');
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+        $result = json_decode(curl_exec($curl), true);
+        curl_close($curl);
+        $access_token = $result['access_token'];
+    }
+
+
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_POST, 1);
     $hashtags = "memes,love,photography,photo,art";
@@ -50,6 +84,7 @@ if(!isset($_SESSION['user'])){
     foreach ($genres as &$genre) {
         echo "<p style='margin-left: 12px;'>" . $genre . "</p>";
     }
+    echo $access_token;
 }
 
 
