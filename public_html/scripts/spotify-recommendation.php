@@ -100,10 +100,10 @@ if(!isset($_SESSION['user'])){
     $tracks = $recommendations['tracks'];
     echo "<p style='margin-left: 12px;'>Top 10 song recommendations for the following hashtags (" . $hashtags . ")</p>";
     foreach ($tracks as &$track) {
-        echo "<a style='margin-left: 12px;' href='".$track['external_urls']['spotify']."'>" . $track['name'] . "</a>";
+        echo "<a style='margin-left: 12px;' href='".$track['external_urls']['spotify']."'>" . $track['name'] . "</a><br>";
         $track_uri = explode(":",$track['uri']);
 
-        echo '<iframe src="https://open.spotify.com/embed/'.$track_uri[1]."/".$track_uri[2].'" width="300" height="340" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br>';
+        echo '<iframe src="https://open.spotify.com/embed/'.$track_uri[1]."/".$track_uri[2].'" width="300" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br>';
     }
 }
 
