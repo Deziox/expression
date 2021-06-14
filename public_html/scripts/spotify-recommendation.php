@@ -37,11 +37,12 @@ if(!isset($_SESSION['user'])){
         echo "test";
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_POST, 1);
-        $data = json_encode(array("grant_type" => 'authorization_code',
+        $data = array("grant_type" => 'authorization_code',
                                     "code" => $_SESSION['user']['code'],
-                                    "redirect_uri"=>"https://socialnetworking490-dev.herokuapp.com/scripts/spotify-recommendation.php"));
+                                    "redirect_uri"=>"https://socialnetworking490-dev.herokuapp.com/scripts/spotify-recommendation.php");
+        $post_fields = http_build_query($data);
 
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $post_fields);
         curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Basic '.base64_encode(getenv("SPOTIFY_CLIENT_ID").":".getenv("SPOTIFY_CLIENT_SECRET"))));
         curl_setopt($curl, CURLOPT_URL, 'https://accounts.spotify.com/api/token');
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -55,10 +56,11 @@ if(!isset($_SESSION['user'])){
         echo "test2";
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_POST, 1);
-        $data = json_encode(array("grant_type" => 'refresh_token',
-            "refresh_token"=>$_SESSION['user']['refresh_code']));
+        $data = array("grant_type" => 'refresh_token',
+            "refresh_token"=>$_SESSION['user']['refresh_code']);
+        $post_fields = http_build_query($data);
 
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $post_fields);
         curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Basic '.base64_encode(getenv("SPOTIFY_CLIENT_ID").":".getenv("SPOTIFY_CLIENT_SECRET"))));
         curl_setopt($curl, CURLOPT_URL, 'https://accounts.spotify.com/api/token');
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
