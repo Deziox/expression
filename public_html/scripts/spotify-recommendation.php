@@ -103,7 +103,7 @@ if(!isset($_SESSION['user'])){
         echo "<a style='margin-left: 12px;' href='".$track['external_urls']['spotify']."'>" . $track['name'] . "</a>";
         $track_uri = explode(":",$track['uri']);
 
-        echo '<iframe src="https://open.spotify.com/embed/'.$track_uri[1]."/".$track_uri[2].'" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br>';
+        echo '<iframe src="https://open.spotify.com/embed/'.$track_uri[1]."/".$track_uri[2].'" width="300" height="340" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe><br>';
     }
 }
 
