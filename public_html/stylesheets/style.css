@@ -43,6 +43,9 @@
     font-size: 1.1rem !important;
     color: rgb(41, 114, 182);
   }
+  .modal-content {
+    background-image: url(/public_html/images/texture.jpg);
+  }
   /* new post modal 
   .modal-dialog, .modal-content {
     max-height: 50%;
