@@ -30,20 +30,20 @@ if (!isset($_SESSION['user'])) {
 <nav id="mainNavbar"
      class="scrolled navbar navbar-dark navbar-expand-md py-0 px-5 fixed-top justify-content-around">
     <a href="index.php" class="navbar-brand"><img class="d-none d-lg-inline col-md-1" src="" alt="">EXPRS</a>
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggl navigation">
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end mx-1" id="navLinks">
         <form class="form-inline my-2 my-lg-0 post-search-form">
             <input class="form-control mr-sm-2" type="text" id="post-search-tag" name="tag" placeholder="#" aria-label="Search">
-            <button type="button" class="btn btn-outline-success my-2 my-sm-0" id="post-search-button">Go</button>
+            <button type="button" class="btn btn-outline-success my-2 my-sm-0 custom" id="post-search-button">Go</button>
         </form>
         <!-- Trigger NEW POST modal -->
-        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modelId">
+        <button type="button" class="btn btn-primary btn-sm custom btn-create" data-toggle="modal" data-target="#modelId">
             Create a New Post
         </button>
         <!-- Trigger CHAT modal-->
-        <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#modelChat">
+        <button type="button" class="btn btn-outline-info btn-sm custom" data-toggle="modal" data-target="#modelChat">
             Messages
         </button>
         <ul class="navbar-nav">
@@ -124,7 +124,7 @@ if (!isset($_SESSION['user'])) {
                             </div>
                             <div class="form-group">
                                 <label for="">Tags: </label>
-                                <input type="text" class="form-control" name="tags" id="tags" aria-describedby="helpId"
+                                <input type="text" class="form-control2" name="tags" id="tags" aria-describedby="helpId"
                                        placeholder="">
                                 <small id="helpId" class="form-text text-muted">Make sure to include a #</small>
                             </div>

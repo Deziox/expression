@@ -3,11 +3,11 @@
   color: white;
   padding-bottom: 80px;
 }
-.jumbotron .btn-primary {
+.jumbotron {
   background: #845ac7;
   border-color: #845ac7;
 }
-.jumbotron .btn-primary:hover {
+.jumbotron  {
   background: #7646c1;
 }
 .jumbotron p {

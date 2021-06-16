@@ -37,8 +37,8 @@ if (isset($_SESSION['user'])) {
                 $output .= '
                                 <div class="form-group row">
                                         <input type="hidden" class="comment_id" name="comment_id" value="'.$comment['comment_id'].'">
-                                        <label for="readcomments" class="col-form-label"><h3 style="margin-left: 12px;">@' . $comment['username'] . '</h3>
-                                        </label>
+                                        <div for="readcomments" class="col-form-label"><h3 style="margin-left: 12px;">@' . $comment['username'] . '</h3>
+                                        </div>
                                         <div class="col-sm-7">
                                             <div class="col-form-label">' . $comment['text'] . '</div>
                                         </div>
