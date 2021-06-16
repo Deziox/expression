@@ -60,11 +60,11 @@
   }
   .user {
 
-    background-image: url(/public_html/images/userbackground.png);
+    background-image: url(/public_html/images/userbackground.png) no-repeat center center fixed;
     background-size: cover;
   }
   .login {
-    background-image: url(/public_html/images/userbackground.png);
+    background-image: url(/public_html/images/userbackground.png) no-repeat center center fixed;
     background-size: cover;
   }
   .mainNavbar a:hover {

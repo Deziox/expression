@@ -45,6 +45,7 @@
                     <form action="register.php" method="post">
                         <div class="form-row">
                             <div class="form-group col-md-6">
+                                <div class="align-self-center mb-2">Enter your information:</div>
                                 <label for="Username">Username</label>
                                 <?php echo "<div class=\"error\">".$errors['username']."</div>";?>
                                 <input type="text" class="form-control" id="username" placeholder="John" <?php echo 'value="'.$username.'"'?> name="username">
@@ -77,7 +78,6 @@
                     </form>
     </div>
 
-                <div class="align-self-center mb-2">Enter your information:</div>
 
 
 
