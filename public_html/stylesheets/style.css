@@ -60,12 +60,12 @@
   }
   .user {
 
-    background-image: url(/public_html/images/userbackground.png) no-repeat center center fixed;
-    background-size: cover;
+    background-image: url(/public_html/images/userbackground.png);
+    background-size: 2560px 1440px;
   }
   .login {
-    background-image: url(/public_html/images/userbackground.png) no-repeat center center fixed;
-    background-size: cover;
+    background-image: url(/public_html/images/userbackground.png);
+    background-size: 2560px 1440px;
   }
   .mainNavbar a:hover {
       color: rgb(41, 114, 182);
