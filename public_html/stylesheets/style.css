@@ -44,7 +44,10 @@
     color: rgb(41, 114, 182);
   }
   .modal-content {
-    background-image: url(/public_html/images/texture.jpg);
+    background-image: url(/public_html/images/texturemarb.jpg);
+  }
+  .card {
+    background-image: url(/public_html/images/texture2.jpg);
   }
   /* new post modal 
   .modal-dialog, .modal-content {
