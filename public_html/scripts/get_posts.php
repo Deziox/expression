@@ -201,8 +201,7 @@ if (isset($_SESSION['user'])) {
                     }
                     $post_time = strtotime($result['post_time']);
                     $formatted_time = date('m/d/y',$post_time);
-                    $output .= '</div>
-                    <div class="card-footer">
+                    $output .= '<div class="card-footer">
                     <small>Posted ' . $formatted_time . '</small>
                     </div>
                     </div>
