@@ -65,15 +65,12 @@
     font-weight: 200;
     font-size: 1.1rem;
   }
-  .user {
+  .logreg {
 
     background-image: url(/public_html/images/userbackground.png);
     background-size: 2560px 1440px;
   }
-  .login {
-    background-image: url(/public_html/images/userbackground.png);
-    background-size: 2560px 1440px;
-  }
+
   .mainNavbar a:hover {
       color: darkred;
   }
