@@ -61,9 +61,11 @@
   .user {
 
     background-image: url(/public_html/images/userbackground.png);
+    background-size: cover;
   }
   .login {
     background-image: url(/public_html/images/userbackground.png);
+    background-size: cover;
   }
   .mainNavbar a:hover {
       color: rgb(41, 114, 182);

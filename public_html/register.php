@@ -40,44 +40,51 @@
     <!-- Form -->
     <section class="container pt-5 justify-content-center mt-5">
         <div class="jumbotron pt-5">
-            <div class="align-self-center mb-2">Enter your information:</div>
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <form action="register.php" method="post">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="Username">Username</label>
+                                <?php echo "<div class=\"error\">".$errors['username']."</div>";?>
+                                <input type="text" class="form-control" id="username" placeholder="John" <?php echo 'value="'.$username.'"'?> name="username">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="Email">E-mail</label>
+                                <?php echo "<div class=\"error\">".$errors['email']."</div>";?>
+                                <input type="email" class="form-control" id="email" placeholder="name@example.com" <?php echo 'value="'.$email.'"'?>name="email">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="password">Password</label>
+                                <?php echo "<div class=\"error\">".$errors['password']."</div>";?>
+                                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="confirmpassword">Confirm Password</label>
+                                <?php echo "<div class=\"error\">".$errors['confirm']."</div>";?>
+                                <input type="password" class="form-control" id="password" placeholder="confirm password" name="confirm-password">
+                            </div>
+                        </div>
 
-            <form action="register.php" method="post">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="Username">Username</label>
-                        <?php echo "<div class=\"error\">".$errors['username']."</div>";?>
-                        <input type="text" class="form-control" id="username" placeholder="John" <?php echo 'value="'.$username.'"'?> name="username">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="Email">E-mail</label>
-                        <?php echo "<div class=\"error\">".$errors['email']."</div>";?>
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com" <?php echo 'value="'.$email.'"'?>name="email">
-                    </div>
+                        <button type="submit" name="submit" class="btn btn-primary" value="register">Submit</button>
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="password">Password</label>
-                        <?php echo "<div class=\"error\">".$errors['password']."</div>";?>
-                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="confirmpassword">Confirm Password</label>
-                        <?php echo "<div class=\"error\">".$errors['confirm']."</div>";?>
-                        <input type="password" class="form-control" id="password" placeholder="confirm password" name="confirm-password">
-                    </div>
+                <div class="col-md-4">
+                <img src="/public_html/images/musicpainting.jpg" alt="">
                 </div>
-
-                <button type="submit" name="submit" class="btn btn-primary" value="register">Submit</button>
         </div>
+                    </form>
+    </div>
+
+                <div class="align-self-center mb-2">Enter your information:</div>
+
 
 
 </div>
-
-
-</form>
-
-</div>
+            
+            </div>
+            
 </section>
 </div>
 
