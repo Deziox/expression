@@ -198,9 +198,9 @@
   }
 
   .card:hover{
-    transform: scale(1.30);
-    margin-top:20%;
-    margin-bottom:20%;
+    transform: scale(1.15);
+    margin-top:18%;
+    margin-bottom:18%;
     transition-duration: 1s;
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
   }
