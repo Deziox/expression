@@ -190,9 +190,9 @@ if (isset($_SESSION['user'])) {
                     <input type="hidden" id="comment_ids_' . $result['post_id'] . '" name="comment_ids" value="">
                     <input type="text" class="form-control comment"  placeholder="Comment" name="comment">
                     <div class="container">
-                    <button type="button" name="post" id="post_' . $result['post_id'] . '" onclick="sendComment(' . $result['post_id'] . ')">Post</button>
+                    <button type="button" class="comment_post btn btn-primary" name="post" id="post_' . $result['post_id'] . '" onclick="sendComment(' . $result['post_id'] . ')">Post</button>
                     </div>
-                    </form>';
+                    </form><div class="card-body text-center"><h4>Song Recommendation:</h4>';
 
                     if(!isset($_SESSION['user']['refresh_code'])){
                         $output .= '<a type="button" class="btn btn-success chat-send" id="chat-send" href="./scripts/spotify-login.php"><i class="fab fa-spotify"></i>  Log in to Spotify</a>';
@@ -201,7 +201,7 @@ if (isset($_SESSION['user'])) {
                     }
                     $post_time = strtotime($result['post_time']);
                     $formatted_time = date('m/d/y',$post_time);
-                    $output .= '<div class="card-footer">
+                    $output .= '</div><div class="card-footer">
                     <small>Posted ' . $formatted_time . '</small>
                     </div>
                     </div>
