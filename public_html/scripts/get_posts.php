@@ -88,10 +88,11 @@ if (isset($_SESSION['user'])) {
                     }else{
                         $output .= get_recommendation($recommender_tags);
                     }
-
+                    $post_time = strtotime($result['post_time']);
+                    $formatted_time = date('m/d/y',$post_time);
                     $output .= '</div>
                     <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <small>Posted ' . $formatted_time . '</small>
                     </div>
                     </div>
                     <br><br>';
@@ -176,19 +177,21 @@ if (isset($_SESSION['user'])) {
                         $tag_result = $stmt->fetch(PDO::FETCH_ASSOC);
                     }
 
+
+
                     $output .= '<p class="card-text">' . $tag_output . '</p><div class="comment_area scroll overflow-auto" id="comment_area_' . $result['post_id'] . '">';
 
                     $output .= '</div></div>
                     <form class="comment_form" id="comment_form_' . $result['post_id'] . '">
                     <input type="hidden" class="post_id" name="post_id" value="' . $result['post_id'] . '">
                     <input type="hidden" id="comment_ids_' . $result['post_id'] . '" name="comment_ids" value="">
-                    <input type="text" class="form-control comment" placeholder="Comment" name="comment">
+                    <input type="text" class="form-control comment"  placeholder="Comment" name="comment">
                     <div class="container">
-                    <button type="button" class="comment_post btn btn-primary" name="post" id="post_' . $result['post_id'] . '" onclick="sendComment(' . $result['post_id'] . ')">Post</button>
+                    <button type="button" name="post" id="post_' . $result['post_id'] . '" onclick="sendComment(' . $result['post_id'] . ')">Post</button>
                     </div>
                     </form>
                     <div class="card-footer">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <small>Posted' . $result['post_time'] . '</small>
                     </div>
                     </div>
                     <br><br>';

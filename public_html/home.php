@@ -32,7 +32,7 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go</button>
         </form>
         <!-- Trigger NEW POST modal -->
-        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modelId">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelId">
             Create a New Post
         </button>
 

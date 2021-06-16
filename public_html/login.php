@@ -38,12 +38,17 @@ include('../login/login_handler.php');
     <!-- Form -->
     <section class="container pt-5 justify-content-center mt-5">
         <div class="jumbotron pt-5">
-            <img class="col-md-4" src="/public_html/images/musicpainting.jpg" alt="">         
-            <form class="cold-md-8" action="login.php" method="post">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src="/public_html/images/musicpainting.jpg" alt="">
+                </div>
+                <div class="col-md-8">
+
+                            <form action="login.php" method="post">
                 <div class="align-self-center mb-2"><h2>Enter Login:</h2></div>
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="Email"><h2>E-mail</h2></label>
+                        <label for="Email"><h2">E-mail</h2></label>
                         <?php echo "<div class=\"error\">".$errors['email']."</div>";?>
                         <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
                     </div>
@@ -59,12 +64,13 @@ include('../login/login_handler.php');
                 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 
         </div>
-
-
 </div>
-
-
 </form>
+
+                </div>
+            </div>
+         
+
 
 </div>
 </section>
