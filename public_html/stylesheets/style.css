@@ -68,6 +68,8 @@
   .user {
     background-image: url(/public_html/images/userbackground.png);
     background-size: 2560px 1440px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
   .logreg {
 
