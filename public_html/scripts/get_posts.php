@@ -181,7 +181,8 @@ if (isset($_SESSION['user'])) {
                             $recommender_tags .= ",";
                         }
                     }
-
+                    $post_time = strtotime($result['post_time']);
+                    $formatted_time = date('d/m/y',$post_time);
                     $output .= '<p class="card-text">' . $tag_output . '</p><div class="comment_area scroll overflow-auto" id="comment_area_' . $result['post_id'] . '">';
 
                     $output .= '</div></div>
