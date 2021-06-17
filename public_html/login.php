@@ -50,7 +50,7 @@ include('../login/login_handler.php');
                         <div class="align-self-center mb-2"><h2>Enter Login:</h2></div>
                         <div class="form-row">
                             <div class="form-group col-md-12">
-                                <label for="Email"><h2">E-mail</h2></label>
+                                <label class="custom2" for="Email"><h2">E-mail</h2></label>
                                 <?php echo "<div class=\"error\">" . $errors['email'] . "</div>"; ?>
                                 <input type="email" class="form-control" id="email" placeholder="name@example.com"
                                        name="email">

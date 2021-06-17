@@ -68,6 +68,8 @@
   .user {
     background-image: url(/public_html/images/userbackground.png);
     background-size: 2560px 1440px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
   .logreg {
 
@@ -240,4 +242,36 @@
   .form-control{
     margin-top: 5px;
     margin-bottom: 5px;
+  }
+
+  .custom{
+    height:40px !important;
+    background-color: transparent !important;
+    margin-right: 2px;
+  }
+
+  .btn-primary{
+    color: rgba(255, 255, 255, 0.92);
+    border-color: #449be3;
+  }
+
+  .btn-create{
+    color: #449be3 !important;
+  }
+
+  .btn-create:hover{
+    color:whitesmoke !important;
+    border-color: #449be3;
+  }
+
+  .form-control{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .custom2{
+    font-family: "Oswald";
+    font-weight: 200 !important;
+    font-size: 1.35rem !important;
+    color: rgb(255, 255, 255) !important;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   }
