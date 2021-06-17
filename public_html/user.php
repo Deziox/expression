@@ -133,7 +133,7 @@ if (!isset($_SESSION['user'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="post">Post</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="post">Post</button>
                 </div>
             </div>
         </div>
