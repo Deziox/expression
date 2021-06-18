@@ -27,7 +27,7 @@ if(!isset($_SESSION['user'])){
   </head>
 
 
-  <body id="body">
+  <body id="body" class="admin">
 
     <!-- Navbar -->
     <nav id="mainNavbar" class="scrolled navbar navbar-dark navbar-expand-md py-0 px-5 fixed-top justify-content-around">

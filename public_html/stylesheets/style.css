@@ -77,6 +77,11 @@
     background-size: 2560px 1440px;
   }
 
+  .admin {
+    background-image: linear-gradient(to bottom right,rgb(27,65,86),rgb(71, 66, 61));
+
+  }
+
   .mainNavbar a:hover {
       color: darkred;
   }
