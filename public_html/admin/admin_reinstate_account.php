@@ -19,7 +19,7 @@ if(!isset($_SESSION['user'])){
 if(!isset($_GET['uid'])){
     echo "empty";
 }else{
-    include_once "../config.php";
+    include_once "../../config.php";
     $uid = $_GET['uid'];
     $db = new PDO("mysql:host=$cleardb_server;dbname=$cleardb_db", $cleardb_username, $cleardb_password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

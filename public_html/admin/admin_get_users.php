@@ -14,7 +14,7 @@ if(!isset($_SESSION['user'])){
 }else if($_SESSION['user']['is_admin'] != 1){
     header("location: /user.php");
 }else{
-    include_once "../config.php";
+    include_once "../../config.php";
     $db = new PDO("mysql:host=$cleardb_server;dbname=$cleardb_db", $cleardb_username, $cleardb_password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $db->prepare("SELECT * FROM users");
