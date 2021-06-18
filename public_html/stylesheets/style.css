@@ -79,6 +79,9 @@
 
   .admin {
     background-image: linear-gradient(to bottom right,rgb(27,65,86),rgb(71, 66, 61));
+    background-size: 2560px 1440px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 
   }
 
@@ -89,7 +92,7 @@
       background-color: rgb(18, 58, 76);
   }
   #regNavbar a:hover {
-      color: rgb(41, 114, 182)
+      color: rgb(41, 114, 182) !important;
   }
 
   /* login/register jumbotron */
