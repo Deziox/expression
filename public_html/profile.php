@@ -97,7 +97,7 @@ try{
 </div>
 <br>
 <!-- user profile page -->
-<div class="container mt-5 col-md-4 text-center">
+<div class="container mt-5 col-md-3 text-center bg-light rounded">
     <h3 style="font-size: xx-large"><?php echo "@".$result['username']?></h3>
     <?php
         if(!empty($result['bio'])){
