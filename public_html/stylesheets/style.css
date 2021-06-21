@@ -253,6 +253,10 @@
     background-color: rgb(27,65,86) !important;
     border-color: #449be3 !important;
   }
+  
+  .form-control:focus{
+    background-color: #f4840d !important;
+  }
 
   .custom{
     height:40px !important;
@@ -274,10 +278,6 @@
     border-color: #449be3;
   }
 
-  .form-control{
-    margin-top: 5px;
-    margin-bottom: 5px;
-  }
   .custom2{
     font-family: "Oswald" !important;
     font-weight: 200 !important;
