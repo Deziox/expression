@@ -51,10 +51,6 @@ function get_recommendation($tags)
             curl_close($curl);
             $genres = explode(",", $result['recommendation']['genres']);
 
-//            echo "<p style='margin-left: 12px;'>Top 5 genre recommendations for the following hashtags (" . $hashtags . ")</p>";
-//            foreach ($genres as &$genre) {
-//                echo "<p style='margin-left: 12px;'>" . $genre . "</p>";
-//            }
             $seed_genre = implode("%2C", $genres);
 
             $curl = curl_init();

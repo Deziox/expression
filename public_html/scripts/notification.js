@@ -9,7 +9,7 @@ setInterval(()=>{
             if (xhr.status === 200) {
                 let data = xhr.response;
                 if (data == "empty") {
-                    console.log("no recent messages");
+                    //console.log("no recent messages");
                 } else if (data == "nosesh") {
                 } else {
                     let notif_toast = document.getElementsByClassName("show")

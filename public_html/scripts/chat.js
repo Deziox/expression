@@ -36,9 +36,9 @@ document.getElementById("chat-send").onclick = () =>{
             if(xhr.status === 200){
                 let data = xhr.response;
                 if(data == "empty"){
-                    console.log("empty message");
+                    //console.log("empty message");
                 }else if(data == "nouser"){
-                    console.log("no valid user in search field");
+                    //console.log("no valid user in search field");
                 }else{
                     inputField.value = "";
                 }
@@ -124,7 +124,7 @@ setInterval(()=>{
                     output += ",";
                 }
             }
-            console.log(output);
+            //console.log(output);
             document.getElementById("message_ids").value = output;
         }
 
@@ -135,7 +135,7 @@ setInterval(()=>{
                 if (xhr.status === 200) {
                     let data = xhr.response;
                     if (data == "empty") {
-                        console.log("empty");
+                        //console.log("empty");
                     } else if (data == "nosesh") {
 
                     } else {

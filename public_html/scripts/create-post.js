@@ -7,7 +7,7 @@ document.getElementById("post").onclick = () =>{
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200){
                 let data = xhr.response;
-                console.log(data);
+                //console.log(data);
                 if(data == "err_title"){
 
                 }else if(data == "err_file"){
