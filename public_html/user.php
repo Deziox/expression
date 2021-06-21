@@ -72,6 +72,7 @@ if (!isset($_SESSION['user'])) {
     </div>
 </div>
 
+
 <!-- Header  -->
 <!-- <header>
     <div class="overlay"></div>
@@ -86,10 +87,14 @@ if (!isset($_SESSION['user'])) {
 </div> -->
 
 <!-- USER CARDS -->
+<div class="success hide Fixed">
+    <span class="msg">You successfully created a post!</span>
+    <span class="croise"><i class="fa fa-times"></i></span>
+</div>
+
 <br>
 <div class="container mt-5 post-card-area col-md-4">
 </div>
-
 <div class="container mt-5">
 
 
@@ -133,7 +138,7 @@ if (!isset($_SESSION['user'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="post">Post</button>
+                    <button type="button" class="btn btn-primary alert-btn" data-dismiss="modal" id="post">Post</button>
                 </div>
             </div>
         </div>
@@ -244,6 +249,21 @@ if (!isset($_SESSION['user'])) {
             var $nav = $("#mainNavbar");
             $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height())
         });
+    });
+</script>
+<script>
+    $('#post').click(function(){
+            $('.success').addClass("show");
+            $('.success').addClass("alert");
+            $('.success').removeClass("hide");
+            setTimeout(function(){
+                $('.success').removeClass("show");
+                $('.success').addClass("hide");
+            },5000)
+    });
+    $('.croise').click(function(){
+        $('.success').removeClass("show");
+        $('.success').addClass("hide");
     });
 </script>
 </body>
