@@ -46,7 +46,7 @@ if (isset($_SESSION['user'])) {
                     <img class="card-img-top" src="' . $img_url . '" alt="Card image cap">
                     <div class="card-body">
                     <h3 class="card-title font-weight-bold">' . $result['title'] . '</h3>
-                    <label>@' . $result['username'] . '</label>
+                    <a href="/profile.php?id='.$result['userid'].'"><label>@' . $result['username'] . '</label></a>
                     <p class="card-text">' . $result['description'] . '</p>';
 
                     $tag_output = "";
@@ -157,7 +157,7 @@ if (isset($_SESSION['user'])) {
                     <img class="card-img-top" src="' . $img_url . '" alt="Card image cap">
                     <div class="card-body">
                     <h3 class="card-title font-weight-bold">' . $result['title'] . '</h3>
-                    <label>@' . $result['username'] . '</label>
+                    <a href="/profile.php?id='.$result['userid'].'"><label>@' . $result['username'] . '</label></a>
                     <p class="card-text">' . $result['description'] . '</p>';
 
                     $tag_output = "";
