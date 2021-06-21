@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
 
             if(!$result){
                 $errors['email'] = "No account exists with that email.";
-            }else{
+            }else if($result['disabled'] == 0){
                 if(password_verify($password,$rpass)){
                     $_SESSION['user'] = array(
                         "uid" => $result['userid'],
@@ -54,6 +54,8 @@ if(isset($_POST['submit'])){
                 }else{
                     $errors['password'] = "Password is invalid";
                 }
+            }else{
+                $errors['password'] = "Your account is currently disabled. Contact admin for further details.";
             }
         }catch(PDOException $e){
             //echo "Connection failed: " . $e->getMessage();
