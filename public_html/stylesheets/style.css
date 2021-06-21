@@ -49,6 +49,7 @@
   }
   .card {
     background-image: url(/public_html/images/texturemarb.jpg);
+    background-size: cover;
   }
   /* new post modal 
   .modal-dialog, .modal-content {
