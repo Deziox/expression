@@ -85,8 +85,8 @@
 
   }
 
-  .mainNavbar a:hover {
-      color: darkred;
+  #mainNavbar a:hover {
+      color: rgb(41, 114, 182);
   }
   #regNavbar {
       background-color: rgb(18, 58, 76);
@@ -232,6 +232,13 @@
     background-color: transparent !important;
     margin-right: 2px;
   }
+
+  /* landing register button */
+  .landing .btn-primary {
+    border-color: #449be3 !important;
+    background-color: #f4840d !important;
+  }
+    
 
   .btn-primary{
     color: rgba(255, 255, 255, 0.92);
