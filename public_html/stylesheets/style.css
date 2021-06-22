@@ -207,6 +207,7 @@
 */
   .error{
     color:red !important;
+    text-shadow: -1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000, 1px 1px 2px #000;
   }
 
   .card:hover{

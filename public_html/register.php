@@ -42,29 +42,29 @@
         <div class="jumbotron pt-5">
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    <div class="align-self-center mb-2">Enter your information:</div>
+                    <div class="align-self-center mb-2"><h2>Enter your information:</h2></div>
                     <form action="register.php" method="post">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 
-                                <label for="Username">Username</label>
+                                <label for="Username"><h2>Username</h2></label>
                                 <?php echo "<div class=\"error\">".$errors['username']."</div>";?>
                                 <input type="text" class="form-control" id="username" placeholder="John" <?php echo 'value="'.$username.'"'?> name="username">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="Email">E-mail</label>
+                                <label for="Email"><h2>E-mail</h2></label>
                                 <?php echo "<div class=\"error\">".$errors['email']."</div>";?>
                                 <input type="email" class="form-control" id="email" placeholder="name@example.com" <?php echo 'value="'.$email.'"'?>name="email">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="password">Password</label>
+                                <label for="password"><h2>Password</h2></label>
                                 <?php echo "<div class=\"error\">".$errors['password']."</div>";?>
                                 <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="confirmpassword">Confirm Password</label>
+                                <label for="confirmpassword"><h2>Confirm Password</h2></label>
                                 <?php echo "<div class=\"error\">".$errors['confirm']."</div>";?>
                                 <input type="password" class="form-control" id="password" placeholder="confirm password" name="confirm-password">
                             </div>

@@ -51,7 +51,7 @@ include('../login/login_handler.php');
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label class="custom2" for="Email"><h2">E-mail</h2></label>
-                                <?php echo "<div class=\"error\">" . $errors['email'] . "</div>"; ?>
+                                <?php echo "<div class=\"error\" style='color: red; text-shadow: -1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000, 1px 1px 2px #000;'>" . $errors['email'] . "</div>"; ?>
                                 <input type="email" class="form-control" id="email" placeholder="name@example.com"
                                        name="email">
                             </div>
@@ -59,7 +59,7 @@ include('../login/login_handler.php');
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="password"><h2>Password</h2></label>
-                                <?php echo "<div class=\"error\">" . $errors['password'] . "</div>"; ?>
+                                <?php echo "<div class=\"error\" style='color: red; text-shadow: -1px -1px 2px #000, 1px -1px 2px #000, -1px 1px 2px #000, 1px 1px 2px #000;'>" . $errors['password'] . "</div>"; ?>
                                 <input type="password" class="form-control" id="password" placeholder="Password"
                                        name="password">
                             </div>
