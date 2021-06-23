@@ -34,11 +34,11 @@ if (isset($_SESSION['user'])) {
                 }
                 if(!in_array($result['message_id'],$message_ids)){
                     if($result['sender_id'] === $_POST['sender_id']){
-                        $output = '<div class="d-flex flex-row p-3">
-                                    <input type="hidden" class="message_id" value="'.$result['message_id'].'">
+                        $output = '<div class="d-flex flex-row-reverse p-3">
+                                    <i class="fas fa-user-friends"></i>
                                     <div class="bg-white mr-2 p-3" id="userMessage"><span class="text-muted">'.$result['text'].'</span>
                                     </div>
-                                    <i class="fas fa-user-friends"></i>
+                                    <input type="hidden" class="message_id" value="'.$result['message_id'].'">
                                     </div>' . $output;
                     }else{
                         $output = '<div class="container d-flex justify-content center">
