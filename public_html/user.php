@@ -283,7 +283,8 @@ if (!isset($_SESSION['user'])) {
     var loading_screen_interval = setInterval(()=>{
         var unloaded_elements = document.getElementsByClassName("unloaded");
         if(unloaded_elements.length == 0) {
-            setTimeout(hideLoader, 2 * 1000);
+            hideLoader();
+            //setTimeout(hideLoader, 1 * 1000);
         }
     },2000)
 </script>
