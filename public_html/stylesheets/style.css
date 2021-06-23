@@ -52,6 +52,20 @@
     background-size: cover;
     -webkit-animation: in 0.5s;
   }
+
+  /* new post modal textboxes */
+  .create-post #title{
+    background-color: rgb(27,90,86)
+  }
+
+  .create-post #message {
+    background-color: rgb(27,90,86);
+  
+  }
+
+  .create-post #tags {
+    background-color: rgb(27,90,86);
+  }
   /* new post modal 
   .modal-dialog, .modal-content {
     max-height: 50%;
