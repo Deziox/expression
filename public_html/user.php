@@ -303,7 +303,7 @@ if (!isset($_SESSION['user'])) {
             hideLoader();
             //setTimeout(hideLoader, 1 * 1000);
         }
-    }, 1000)
+    }, 800)
 </script>
 <script>
     function postDelConfirmation(id,uid) {
