@@ -358,7 +358,7 @@
   }
 
   #loading {
-    background: url('../images/loading.gif') no-repeat center center;
+    background: url(/public_html/images/loading.gif) no-repeat center center;
     position: absolute;
     top: 0;
     left: 0;
