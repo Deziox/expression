@@ -120,6 +120,7 @@ window.onload = function(){
                                     if(xhr.status === 200){
                                         let data = xhr.response;
                                         if(data == "empty"){
+                                            element.classList.remove("unloaded");
                                         }else if(data == "nosesh"){
                                         }else{
                                             element.innerHTML = data + element.innerHTML;
