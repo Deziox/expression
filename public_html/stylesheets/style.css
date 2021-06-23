@@ -57,14 +57,21 @@
   .create-post #title{
     background-color: rgb(27,90,86)
   }
-
   .create-post #message {
     background-color: rgb(27,90,86);
-  
   }
-
   .create-post #tags {
     background-color: rgb(27,90,86);
+  }
+
+  .create-post #tags:focus{
+    background-color: #f4840d !important;
+  }
+  .create-post #message:focus{
+    background-color: #f4840d !important;
+  }
+  .create-post #title:focus{
+    background-color: #f4840d !important;
   }
   /* new post modal 
   .modal-dialog, .modal-content {
