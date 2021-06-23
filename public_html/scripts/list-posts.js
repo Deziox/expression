@@ -123,6 +123,7 @@ window.onload = function(){
                                         }else if(data == "nosesh"){
                                         }else{
                                             element.innerHTML = data + element.innerHTML;
+                                            element.classList.remove("unloaded");
                                         }
                                     }
                                 }

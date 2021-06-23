@@ -25,6 +25,9 @@ if (!isset($_SESSION['user'])) {
 
 
 <body class="user">
+<div id="loader">
+    <div id="loading" style="position: fixed;background-color: black"></div>
+</div>
 
 <!-- Navbar -->
 <nav id="mainNavbar"
@@ -35,11 +38,14 @@ if (!isset($_SESSION['user'])) {
     </button>
     <div class="collapse navbar-collapse justify-content-end mx-1" id="navLinks">
         <form class="form-inline my-2 my-lg-0 post-search-form">
-            <input class="form-control mr-sm-2" type="text" id="post-search-tag" name="tag" placeholder="#" aria-label="Search">
-            <button type="button" class="btn btn-outline-success my-2 my-sm-0 custom" id="post-search-button">Go</button>
+            <input class="form-control mr-sm-2" type="text" id="post-search-tag" name="tag" placeholder="#"
+                   aria-label="Search">
+            <button type="button" class="btn btn-outline-success my-2 my-sm-0 custom" id="post-search-button">Go
+            </button>
         </form>
         <!-- Trigger NEW POST modal -->
-        <button type="button" class="btn btn-primary btn-sm custom btn-create" data-toggle="modal" data-target="#modelId">
+        <button type="button" class="btn btn-primary btn-sm custom btn-create" data-toggle="modal"
+                data-target="#modelId">
             Create a New Post
         </button>
         <!-- Trigger CHAT modal-->
@@ -171,7 +177,8 @@ if (!isset($_SESSION['user'])) {
                     </div>
                     <div class="container-fluid">
                         <form class="chat-typing-area" autocomplete="off">
-                            <input type="hidden" name="sender_id" id="sender_id" value="<?php echo $_SESSION['user']['uid']; ?>">
+                            <input type="hidden" name="sender_id" id="sender_id"
+                                   value="<?php echo $_SESSION['user']['uid']; ?>">
                             <input type="hidden" name="receiver_id" id="receiver_id" value="">
                             <input type="hidden" id="message_ids" name="message_ids" value="">
                             <input type="hidden" name="read_messages" id="read_messages" value="">
@@ -206,8 +213,8 @@ if (!isset($_SESSION['user'])) {
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -222,6 +229,7 @@ if (!isset($_SESSION['user'])) {
 <script type="text/javascript" src="scripts/notification.js"></script>
 <script>
     document.getElementById
+
     function sendComment(id) {
         var form = document.getElementById('comment_form_' + id);
 
@@ -252,19 +260,32 @@ if (!isset($_SESSION['user'])) {
     });
 </script>
 <script>
-    $('#post').click(function(){
-            $('.success').addClass("show");
-            $('.success').addClass("alert");
-            $('.success').removeClass("hide");
-            setTimeout(function(){
-                $('.success').removeClass("show");
-                $('.success').addClass("hide");
-            },5000)
+    $('#post').click(function () {
+        $('.success').addClass("show");
+        $('.success').addClass("alert");
+        $('.success').removeClass("hide");
+        setTimeout(function () {
+            $('.success').removeClass("show");
+            $('.success').addClass("hide");
+        }, 5000)
     });
-    $('.croise').click(function(){
+    $('.croise').click(function () {
         $('.success').removeClass("show");
         $('.success').addClass("hide");
     });
+</script>
+<script>
+    function hideLoader() {
+        $('#loading').fadeOut(1000);
+        clearInterval(loading_screen_interval);
+    }
+
+    var loading_screen_interval = setInterval(()=>{
+        var unloaded_elements = document.getElementsByClassName("unloaded");
+        if(unloaded_elements.length == 0) {
+            setTimeout(hideLoader, 2 * 1000);
+        }
+    },2000)
 </script>
 </body>
 
