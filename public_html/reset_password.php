@@ -38,12 +38,12 @@ include("../login/reset_handler.php")
     <!-- Form -->
     <section class="container pt-5 justify-content-center mt-5">
         <div class="jumbotron pt-5">
-            <div class="align-self-center mb-2">Enter a new password</div>
+            <div class="align-self-center mb-2"><h2>Enter a new password</h2></div>
 
             <?php echo '<form action="reset_password.php?uid='.$_GET['uid'].'" method="post">'?>
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="password">New Password</label>
+                        <label for="password"><h2>New Password</h2></label>
                         <?php echo "<div class=\"error\">".$errors['password']."</div>";?>
                         <input type="password" class="form-control" id="code" placeholder="Enter new password" name="password">
                     </div>

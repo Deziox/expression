@@ -62,7 +62,7 @@ try{
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
-<body>
+<body class="logreg">
 
 <div class="container">
     <!-- navbar -->
@@ -83,12 +83,12 @@ try{
     <!-- Form -->
     <section class="container pt-5 justify-content-center mt-5">
         <div class="jumbotron pt-5">
-            <div class="align-self-center mb-2">Enter the code you received in your email to reset your password</div>
+            <div class="align-self-center mb-2"><h2>Enter the code you received in your email to reset your password</h2></div>
 
             <?php echo '<form action="reset_code_confirm.php?uid='.$_GET['uid'].'" method="post">'?>
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="code">Reset Code</label>
+                        <label for="code"><h2>Reset Code</h2></label>
                         <?php echo "<div class=\"error\">".$errors['code']."</div>";?>
                         <input type="text" class="form-control" id="code" placeholder="Enter reset code" name="code">
                     </div>

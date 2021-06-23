@@ -38,12 +38,12 @@ include("../login/forgot_request.php");
     <!-- Form -->
     <section class="container pt-5 justify-content-center mt-5">
         <div class="jumbotron pt-5">
-            <div class="align-self-center mb-2">Enter E-mail to receive a code to reset your password</div>
+            <div class="align-self-center mb-2"><h2>Enter E-mail to receive a code to reset your password</h2></div>
 
             <form action="forgot_password.php" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="Email">E-mail</label>
+                        <label for="Email"><h2>E-mail</h2></label>
                         <?php echo "<div class=\"error\">".$errors['email']."</div>";?>
                         <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
                     </div>
