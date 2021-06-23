@@ -75,7 +75,7 @@
   }
   .logreg {
 
-    background-image: url(/public_html/images/userbackground.png);
+    background-image: url(../images/userbackground.png);
     background-size: 2560px 1440px;
   }
 
@@ -215,16 +215,18 @@
     -webkit-animation: out 0.5s;
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
     transform: scale(1.15);
+    margin-top:18%;
+    margin-bottom:18%;
   }
 
   @-webkit-keyframes in {
-    from   { -webkit-transform: scale(1.15); }
-    to { -webkit-transform: scale(1);}
+    from   { -webkit-transform: scale(1.15);margin-top:18%;margin-bottom:18%;}
+    to { -webkit-transform: scale(1); margin-top:0%;margin-bottom:0%;}
   }
 
   @-webkit-keyframes out {
-    from   { -webkit-transform: scale(1); }
-    to { -webkit-transform: scale(1.15);}
+    from   { -webkit-transform: scale(1); margin-top:0%;margin-bottom:0%;}
+    to { -webkit-transform: scale(1.15);margin-top:18%;margin-bottom:18%;}
   }
 
   div.scroll{
