@@ -58,42 +58,6 @@ if(!isset($_SESSION['user'])){
                 </tr>
             </thead>
             <tbody class="admin-users-area">
-                <tr>
-                    <td scope="row">asdf</td>
-                    <td>asdf</td>
-                    <td>asdf</td>
-                    <td><div class="dropdown open">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                    Dropdown
-                                </button>
-                        <div class="dropdown-menu" aria-labelledby="triggerId">
-                            <button class="dropdown-item" href="#">Disable Account</button>
-                            <button class="dropdown-item" href="#">Reinstate Account</button>
-                            <button class="dropdown-item" href="#">Delete Account</button>
-                            <div role="separator" class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Link to profile</a>
-                        </div>
-                    </div></td>
-                </tr>
-                <tr>
-                    <td scope="row">asdf</td>
-                    <td>asdf</td>
-                    <td>asdf</td>
-                    <td><div class="dropdown open">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                    Dropdown
-                                </button>
-                        <div class="dropdown-menu" aria-labelledby="triggerId">
-                            <button class="dropdown-item" href="#">Disable Account</button>
-                            <button class="dropdown-item" href="#">Reinstate Account</button>
-                            <button class="dropdown-item" href="#">Delete Account</button>
-                            <div role="separator" class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Link to profile</a>
-                        </div>
-                    </div></td>
-                </tr>
             </tbody>
         </table>
     </div>

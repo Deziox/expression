@@ -196,16 +196,33 @@ if (!isset($_SESSION['user'])) {
         </div>
     </div>
 
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="modalConfirmation" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Delete</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>You are about to delete this post...</p>
+                    <p>Do you want to proceed?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <form class="delPost" action="delete_post.php" method="post">
+                        <button type="submit" class="btn btn-danger btn-ok">Delete</button>
+                        <input type="hidden" name="post_to_delete" id="post_to_delete" value="">
+                        <input type="hidden" name="post_to_delete_uid" id="post_to_delete_uid" value="">
+                    </form>
+                </div>
 
-    <!--    <script>-->
-    <!--        $('#exampleModal').on('show.bs.modal', event => {-->
-    <!--            var button = $(event.relatedTarget);-->
-    <!--            var modal = $(this);-->
-    <!--            // Use above variables to manipulate the DOM-->
-    <!---->
-    <!--        });-->
-    <!--    </script>-->
-
+            </div>
+        </div>
+    </div>
 
 </div>
 
@@ -276,17 +293,24 @@ if (!isset($_SESSION['user'])) {
 </script>
 <script>
     function hideLoader() {
-        $('#loading').fadeOut(1000);
+        $('#loading').fadeOut(800);
         clearInterval(loading_screen_interval);
     }
 
-    var loading_screen_interval = setInterval(()=>{
+    var loading_screen_interval = setInterval(() => {
         var unloaded_elements = document.getElementsByClassName("unloaded");
-        if(unloaded_elements.length == 0) {
+        if (unloaded_elements.length == 0) {
             hideLoader();
             //setTimeout(hideLoader, 1 * 1000);
         }
-    },2000)
+    }, 250)
+</script>
+<script>
+    function postDelConfirmation(id,uid) {
+        $("#post_to_delete").val(id);
+        $("#post_to_delete_uid").val(uid);
+        $("#modalConfirmation").modal();
+    }
 </script>
 </body>
 

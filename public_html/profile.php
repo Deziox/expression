@@ -53,6 +53,9 @@ try{
 
 
 <body class="user">
+<div id="loader">
+    <div id="loading" style="position: fixed;background-color: black"></div>
+</div>
 
 <!-- Navbar -->
 <nav id="mainNavbar"
@@ -209,14 +212,33 @@ try{
     </div>
 
 
-    <!--    <script>-->
-    <!--        $('#exampleModal').on('show.bs.modal', event => {-->
-    <!--            var button = $(event.relatedTarget);-->
-    <!--            var modal = $(this);-->
-    <!--            // Use above variables to manipulate the DOM-->
-    <!---->
-    <!--        });-->
-    <!--    </script>-->
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="modalConfirmation" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Delete</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>You are about to delete this post...</p>
+                    <p>Do you want to proceed?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <form class="delPost" action="delete_post.php" method="post">
+                        <button type="submit" class="btn btn-danger btn-ok">Delete</button>
+                        <input type="hidden" name="post_to_delete" id="post_to_delete" value="">
+                        <input type="hidden" name="post_to_delete_uid" id="post_to_delete_uid" value="">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
 </div>
@@ -225,8 +247,8 @@ try{
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -284,6 +306,27 @@ try{
         $('.success').removeClass("show");
         $('.success').addClass("hide");
     });
+</script>
+<script>
+    function hideLoader() {
+        $('#loading').fadeOut(800);
+        clearInterval(loading_screen_interval);
+    }
+
+    var loading_screen_interval = setInterval(() => {
+        var unloaded_elements = document.getElementsByClassName("unloaded");
+        if (unloaded_elements.length == 0) {
+            hideLoader();
+            //setTimeout(hideLoader, 1 * 1000);
+        }
+    }, 250)
+</script>
+<script>
+    function postDelConfirmation(id,uid) {
+        $("#post_to_delete").val(id);
+        $("#post_to_delete_uid").val(uid);
+        $("#modalConfirmation").modal();
+    }
 </script>
 </body>
 

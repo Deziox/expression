@@ -36,9 +36,8 @@ if(!isset($_SESSION['user'])){
                         <div class="dropdown-menu" aria-labelledby="triggerId">
                             <button class="dropdown-item" onclick="disable_account('.$result['userid'].')">Disable Account</button>
                             <button class="dropdown-item" onclick="reinstate_account('.$result['userid'].')">Reinstate Account</button>
-                            <button class="dropdown-item" href="#">Delete Account</button>
                             <div role="separator" class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Link to profile</a>
+                            <a class="dropdown-item" href="/profile.php?id='.$result['userid'].'">Link to profile</a>
                         </div>
                     </div></td>
                 </tr>';

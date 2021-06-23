@@ -87,10 +87,14 @@ if (isset($_SESSION['user'])) {
                     }
                     $post_time = strtotime($result['post_time']);
                     $formatted_time = date('m/d/y',$post_time);
+                    $output .= '</div><div class="card-footer">
+                    <small>Posted ' . $formatted_time . '</small>';
+
+                    if($_SESSION['user']['is_admin'] || $result['userid'] == $_SESSION['user']['uid']){
+                        $output .= '<i class="fas fa-trash-alt float-right" aria-hidden="true" onclick="postDelConfirmation('.$result['post_id'].','.$result['userid'].')"></i>';
+                    }
+
                     $output .= '</div>
-                    <div class="card-footer">
-                    <small>Posted ' . $formatted_time . '</small>
-                    </div>
                     </div>
                     <br><br>';
 
