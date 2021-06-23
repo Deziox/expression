@@ -50,6 +50,7 @@
   .card {
     background-image: url(/public_html/images/texturemarb.jpg);
     background-size: cover;
+    -webkit-animation: in 0.5s;
   }
   /* new post modal 
   .modal-dialog, .modal-content {
@@ -211,11 +212,19 @@
   }
 
   .card:hover{
-    transform: scale(1.15);
-    margin-top:18%;
-    margin-bottom:18%;
-    transition-duration: 1s;
+    -webkit-animation: out 0.5s;
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    transform: scale(1.15);
+  }
+
+  @-webkit-keyframes in {
+    from   { -webkit-transform: scale(1.15); }
+    to { -webkit-transform: scale(1);}
+  }
+
+  @-webkit-keyframes out {
+    from   { -webkit-transform: scale(1); }
+    to { -webkit-transform: scale(1.15);}
   }
 
   div.scroll{
