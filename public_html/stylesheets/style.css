@@ -45,12 +45,15 @@
     color: rgb(41, 114, 182);
   }
   .modal-content {
-    background-image: url(/public_html/images/texturemarb.jpg);
+    background-image: url(/public_html/images/texturemarb2.jpg);
   }
   .card {
-    background-image: url(/public_html/images/texturemarb.jpg);
+    background-image: url(/public_html/images/texturemarb2.jpg);
     background-size: cover;
     -webkit-animation: in 0.5s;
+  }
+  .user .btn-primary {
+    background-color: rgb(27,90,86);
   }
 
   /* new post modal textboxes */
