@@ -45,10 +45,10 @@
     color: rgb(41, 114, 182);
   }
   .modal-content {
-    background-image: url(/public_html/images/texturemarb2.jpg);
+    background-image: url(/public_html/images/texturemarb3.jpg);
   }
   .card {
-    background-image: url(/public_html/images/texturemarb2.jpg);
+    background-image: url(/public_html/images//texturemarb3.jpg);
     background-size: cover;
     -webkit-animation: in 0.5s;
   }
