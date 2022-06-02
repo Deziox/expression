@@ -1,12 +1,21 @@
 <?php
 require('../vendor/autoload.php');
-//include('index.html');
 
+session_start();
+
+//include('index.html');
+if(isset($_SESSION['user'])){
+    if($_SESSION['user']['is_admin'] == 1) {
+        header("location: /admin.php");
+    }else{
+        header("location: /user.php");
+    }
+}
 ?>
 <!doctype html>
 <html lang="en">
 <head>
-    <title>A Title</title>
+    <title>Expression</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,12 +29,12 @@ require('../vendor/autoload.php');
 </head>
 
 
-<body id="body">
+<body id="body" class="landing">
 
 <!-- Navbar -->
 <nav id="mainNavbar" class="scrolled navbar navbar-dark navbar-expand-md py-0 px-5 fixed-top justify-content-around">
     <a href="index.php" class="navbar-brand"><img class="d-none d-lg-inline col-md-1"
-                                                   src="" alt="">CS490</a>
+                                                   src="" alt="">EXPRS</a>
     <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggl navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,10 +57,10 @@ require('../vendor/autoload.php');
     <div class="container h-100">
         <div class="d-flex h-100 text-center justify-content-center align-items-center">
             <div class="w-10 text-white">
-                <h1 class="display-3">*Placeholder*</h1>
+                <img src="images/expression-logo.png" style="width:347px;height:151px;">
+<!--                <h1 class="display-3">*Placeholder*</h1>-->
                 <a href="login.php" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Log In</a>
                 <a href="register.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Register</a>
-
 
             </div>
         </div>

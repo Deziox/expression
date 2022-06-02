@@ -65,7 +65,7 @@
             try{
                 $db = new PDO("mysql:host=$cleardb_server;dbname=$cleardb_db",$cleardb_username,$cleardb_password);
                 $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-                echo "Connected Successfully";
+                //echo "Connected Successfully";
 
                 $stmt = $db->prepare("SELECT * FROM users WHERE email = :email");
                 $r = $stmt->execute(array(":email" => $email));
@@ -89,7 +89,7 @@
                     header("location: login.php");
                 }
             }catch(PDOException $e){
-                echo "Connection failed: " . $e->getMessage();
+                //echo "Connection failed: " . $e->getMessage();
             }
         }
     }
