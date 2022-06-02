@@ -1,8 +1,9 @@
 <img src="https://user-images.githubusercontent.com/23386030/171668679-3e982fbd-1116-4403-bdce-6a867f97b87c.png" alt="expression-logo" width="400">
+by Courtney McLeary, Danzel Serrano, and Sam Abraham
 
 ### _"a social media platform to experience and share art in a personal way"_
 
-1. The base function is a social media application, where users can post art, view, and commment on other user's posts.
+1. The base functionality (deliverables for NJIT-CS490) is a social media application, where users can post art, view, and commment on other user's posts.
 2. There is also a live chat section where users can chat with other users.
 3. Admins have their own section for database management and user analytics.
 4. \[Contextual Song Recommendation\] 
