@@ -1,28 +1,17 @@
-# php-getting-started
+<img src="https://user-images.githubusercontent.com/23386030/171668679-3e982fbd-1116-4403-bdce-6a867f97b87c.png" alt="expression-logo" width="400">
 
-A barebones PHP app that makes use of the [Silex](http://silex.sensiolabs.org/) web framework, which can easily be deployed to Heroku.
+### _"a social media platform to experience and share art in a personal way"_
 
-This application supports the [Getting Started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php) article - check it out.
+1. The base function is a social media application, where users can post art, view, and commment on other user's posts.
+2. There is also a live chat section where users can chat with other users.
+3. Admins have their own section for database management and user analytics.
+4. \[Contextual Song Recommendation\] 
+    - A REST API was created (hosted in a separate AWS EC2 instance). The client sends a list of hashtags from a post to this server to receive a list of related music genres (using a naive cosine similarity algorithm for proof of concept).
 
-## Deploying
-
-Install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
-
-```sh
-$ git clone git@github.com:heroku/php-getting-started.git # or clone your own fork
-$ cd php-getting-started
-$ heroku create
-$ git push heroku main
-$ heroku open
-```
-
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using PHP on Heroku, see these Dev Center articles:
-
-- [Getting Started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php)
-- [PHP on Heroku](https://devcenter.heroku.com/categories/php)
+## 06/02/22 (Danzel Serrano) - Potential Revival of This Website for Academic Research
+The revival of this project is due to current interest in whether or not we can make this website more personable and immersive with the help of artificial intelligence.
+    - A small poll on instagram, albeit having miniscule number of participants, allows us to see that people correlate aesthetics in a subjective manner.
+    - The question was to look at a picture of a mountain and try to describe that mountain with a song.
+    - One gave a rap song, one said a ballad, another mentioned "Pictures of Mountains" by Cody Fry (who is an "indiecoustica" artist according to spotify's api)
+    
+Can we leverage artificial intelligence (learning algorithms, classical online algorithms, etc.) to create a user experience that is more personal based on the user's current state?
