@@ -1,5 +1,5 @@
 <img src="https://user-images.githubusercontent.com/23386030/171668679-3e982fbd-1116-4403-bdce-6a867f97b87c.png" alt="expression-logo" width="400">
-by Courtney McLeary, Danzel Serrano, and Sam Abraham
+by Rafael McLeary, Danzel Serrano, and Sam Abraham
 
 ### _"a social media platform to experience and share art in a personal way"_
 
